@@ -1,0 +1,932 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Transit API (Stable)",
+    "version": "4.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "apiKey",
+      "value": "{{apiKey}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "/v4/public/nearby_routes",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/v4/public/nearby_routes",
+        "headers": [
+          {
+            "name": "Accept-Language",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query",
+            "description": "Latitude"
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query",
+            "description": "Longitude"
+          },
+          {
+            "name": "max_distance",
+            "value": "",
+            "type": "query",
+            "description": "Maximum radius of search from the request location (in meters)"
+          },
+          {
+            "name": "locale",
+            "value": "",
+            "type": "query",
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+          },
+          {
+            "name": "should_update_realtime",
+            "value": "",
+            "type": "query",
+            "description": "Boolean telling the system if it should update real time or just return schedule information. "
+          },
+          {
+            "name": "max_num_departures",
+            "value": "",
+            "type": "query",
+            "description": "Number of departures to return per merged itinerary"
+          },
+          {
+            "name": "time",
+            "value": "",
+            "type": "query",
+            "description": "Optional epoch timestamp for getting routes at a specific time. If not provided, current time is used."
+          },
+          {
+            "name": "include_stops_and_shapes",
+            "value": "",
+            "type": "query",
+            "description": "Boolean to control whether stops and shapes are included in itineraries. When false, only itinerary metadata is returned without stops and shape polylines, reducing response size."
+          }
+        ]
+      },
+      "docs": "Returns routes around a location"
+    },
+    {
+      "info": {
+        "name": "/v4/public/nearby_stops",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/v4/public/nearby_stops",
+        "headers": [
+          {
+            "name": "Accept-Language",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query",
+            "description": "Latitude"
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query",
+            "description": "Longitude"
+          },
+          {
+            "name": "max_distance",
+            "value": "",
+            "type": "query",
+            "description": "Maximum radius of search from the request location (in meters)"
+          },
+          {
+            "name": "stop_filter",
+            "value": "",
+            "type": "query",
+            "description": "Determines which location types from the [GTFS](https://developers.google.com/transit/gtfs/reference#stopstxt) are included in the response.\n* Routable (GTFS `location_type` 0): Stops which are served by routes\n* EntrancesAndStopsOutsideStations: Entrances to transit stations and freestanding outdoor stops\n* Entrances (GTFS `location_type` 2): Entrances to stations\n* Any: All stops\n"
+          },
+          {
+            "name": "pickup_dropoff_filter",
+            "value": "",
+            "type": "query",
+            "description": "For routable stops, futher filter based on whether a rider can embark or disembark at this stop.\n* `PickupAllowedOnly`: Riders can board at this stop on at least one trip.\n* `DropoffAllowedOnly`: Riders can exit at this stop on at least one trip.\n* `Everything`: All stops.\n\nFor further reference, see the [GTFS pickup_type and drop_off_type fields](https://developers.google.com/transit/gtfs/reference#stop_timestxt).'\n"
+          },
+          {
+            "name": "locale",
+            "value": "",
+            "type": "query",
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+          }
+        ]
+      },
+      "docs": "Returns stops around a location"
+    },
+    {
+      "info": {
+        "name": "/v4/public/stop_departures",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/v4/public/stop_departures",
+        "headers": [
+          {
+            "name": "Accept-Language",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "global_stop_ids",
+            "value": "",
+            "type": "query",
+            "description": "Comma-separated list of global stop IDs to get departures for multiple stops at once. Must contain at most 100 valid stop IDs. Either this parameter or global_stop_id must be provided."
+          },
+          {
+            "name": "time",
+            "value": "",
+            "type": "query",
+            "description": "UNIX timestamp representing the time for which departures should be determined"
+          },
+          {
+            "name": "remove_cancelled",
+            "value": "",
+            "type": "query",
+            "description": "Remove cancelled schedule items from the results"
+          },
+          {
+            "name": "locale",
+            "value": "",
+            "type": "query",
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+          },
+          {
+            "name": "should_update_realtime",
+            "value": "",
+            "type": "query",
+            "description": "Boolean telling the system if it should update real time or just return schedule information. "
+          },
+          {
+            "name": "max_num_departures",
+            "value": "",
+            "type": "query",
+            "description": "Number of departures to return per merged itinerary"
+          },
+          {
+            "name": "include_stops_and_shapes",
+            "value": "",
+            "type": "query",
+            "description": "Boolean to control whether stops and shapes are included in itineraries. When false, only itinerary metadata is returned without stops and shape polylines, reducing response size."
+          }
+        ]
+      },
+      "docs": "Get upcoming departures for all routes serving one or more stops, with optional real time information"
+    },
+    {
+      "info": {
+        "name": "/v4/public/estimate_plan_duration",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/v4/public/estimate_plan_duration",
+        "params": [
+          {
+            "name": "from_lat",
+            "value": "",
+            "type": "query",
+            "description": "Latitude of the starting location for the trip. Required unless from_global_stop_id is provided."
+          },
+          {
+            "name": "from_lon",
+            "value": "",
+            "type": "query",
+            "description": "Longitude of the starting location for the trip. Required unless from_global_stop_id is provided."
+          },
+          {
+            "name": "from_global_stop_id",
+            "value": "",
+            "type": "query",
+            "description": "Global stop ID for the starting location. Alternative to from_lat/from_lon parameters."
+          },
+          {
+            "name": "to_lat",
+            "value": "",
+            "type": "query",
+            "description": "Latitude of the destination location for the trip. Required unless to_global_stop_id is provided."
+          },
+          {
+            "name": "to_lon",
+            "value": "",
+            "type": "query",
+            "description": "Longitude of the destination location for the trip. Required unless to_global_stop_id is provided."
+          },
+          {
+            "name": "to_global_stop_id",
+            "value": "",
+            "type": "query",
+            "description": "Global stop ID for the destination location. Alternative to to_lat/to_lon parameters."
+          },
+          {
+            "name": "mode",
+            "value": "",
+            "type": "query",
+            "description": "The primary mode of transportation for the trip"
+          },
+          {
+            "name": "secondary_mode",
+            "value": "",
+            "type": "query",
+            "description": "The secondary mode of transportation for the trip, if applicable"
+          },
+          {
+            "name": "leave_time",
+            "value": "",
+            "type": "query",
+            "description": "UNIX timestamp representing the desired departure time for the trip"
+          },
+          {
+            "name": "arrival_time",
+            "value": "",
+            "type": "query",
+            "description": "UNIX timestamp representing the desired arrival time for the trip"
+          },
+          {
+            "name": "accessibility_need",
+            "value": "",
+            "type": "query",
+            "description": "This parameter specifies accessibility requirements for the trip. The following values are available:\n  - `none`: No specific accessibility needs are required; any valid trip may be returned.\n  - `strict`: Returns only strictly accessible trips. Specifically, this includes only trips using accessible stops and accessible routes/vehicles.\n  - `prioritize_step_free`: Prioritizes strictly accessible results but also includes less accessible alternatives (those with unknown or non-step-free accessibility).\n"
+          },
+          {
+            "name": "walk_reluctance",
+            "value": "",
+            "type": "query",
+            "description": "A factor that determines how much walking costly compared to riding in a transit vehicle in the trip plan. Values lower than 1.0 will be ignored. Transit uses the value of 1.1 by default and 2.1 when in the \"Minimize Walking\" mode. "
+          },
+          {
+            "name": "max_distance_between_location_and_stop",
+            "value": "",
+            "type": "query",
+            "description": "The maximum distance allowed between the starting or destination locations and a transit stop. This value can be adjusted to optimize performance by limiting the search radius. This value can only be customized if `mode=transit`, and the default is 1500m."
+          }
+        ]
+      },
+      "docs": "This endpoint returns an estimated duration for a trip plan based on the provided origin and destination. \n\nThe query params used in this endpoint are the same as /public/plan, except for the more limited mode selection, real time not available and multiple results aren't provided. "
+    },
+    {
+      "info": {
+        "name": "/v4/public/plan",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/v4/public/plan",
+        "params": [
+          {
+            "name": "from_lat",
+            "value": "",
+            "type": "query",
+            "description": "Latitude of the starting location for the trip. Required unless from_global_stop_id or from_global_stop_ids is provided."
+          },
+          {
+            "name": "from_lon",
+            "value": "",
+            "type": "query",
+            "description": "Longitude of the starting location for the trip. Required unless from_global_stop_id or from_global_stop_ids is provided."
+          },
+          {
+            "name": "from_global_stop_id",
+            "value": "",
+            "type": "query",
+            "description": "Single global stop ID for the starting location. Kept for backward compatibility; prefer from_global_stop_ids (plural) to describe a correspondence zone."
+          },
+          {
+            "name": "from_global_stop_ids",
+            "value": "",
+            "type": "query",
+            "description": "Comma-separated list of global stop IDs describing the origin correspondence zone (e.g. all platforms of a hub across different networks/parent stations). Each entry may be a platform stop id or a station stop id; stations are automatically expanded to their child platform stops when deciding whether to strip the initial walk leg.\nRouting origin: if from_lat and from_lon are provided, the coordinates are used to plan the trip. Otherwise the first valid stop's location from the list is used as a fallback.\nWalk-leg filtering: the initial walk leg is removed from a plan only when the itinerary actually boards at one of the provided stops (or at their parent station). Plans that board at an unrelated nearby stop keep their walk leg so the client can still present directions to the stop."
+          },
+          {
+            "name": "to_lat",
+            "value": "",
+            "type": "query",
+            "description": "Latitude of the destination location for the trip. Required unless to_global_stop_id or to_global_stop_ids is provided."
+          },
+          {
+            "name": "to_lon",
+            "value": "",
+            "type": "query",
+            "description": "Longitude of the destination location for the trip. Required unless to_global_stop_id or to_global_stop_ids is provided."
+          },
+          {
+            "name": "to_global_stop_id",
+            "value": "",
+            "type": "query",
+            "description": "Single global stop ID for the destination location. Kept for backward compatibility; prefer to_global_stop_ids (plural) to describe a correspondence zone."
+          },
+          {
+            "name": "to_global_stop_ids",
+            "value": "",
+            "type": "query",
+            "description": "Comma-separated list of global stop IDs describing the destination correspondence zone. Behaves symmetrically to from_global_stop_ids: coordinates win for routing when provided, otherwise the first valid stop's location is used; the final walk leg is stripped only when the itinerary actually alights at one of the provided stops."
+          },
+          {
+            "name": "mode",
+            "value": "",
+            "type": "query",
+            "description": "The primary mode of transportation for the trip"
+          },
+          {
+            "name": "secondary_mode",
+            "value": "",
+            "type": "query",
+            "description": "This specifies the secondary mode of transportation for the trip, if applicable.\n\nThis value allows for creating multimodal trips mixing transit and another mode. If a value other than walk is specified here, primary_mode must be set to transit.\n\nWhen this value is set, the planner attempts to replace the first and last legs of the trip with the specified mode if advantageous to do so. If it is not advantageous, a walk leg might be used instead.\n\nNote that the results generated are optimal given the specified modes, but they might not represent the absolute optimal trip overall. Depending on the context, it may be advantageous to compare the result of the multimodal plan against a direct plan (using only the primary mode) to ensure true optimality (i.e., a transit + microtransit result should likely be disregarded if the transit-only plan is faster)."
+          },
+          {
+            "name": "sharing_system_type",
+            "value": "",
+            "type": "query",
+            "description": "Specifies the type of shared mobility system when mode is set to shared_mobility.\n\n- docked_bikeshare: Traditional docked bikeshare systems\n- dockless_bikeshare: Dockless bikes\n- scooters: Electric scooters\n\nIf not specified, defaults to docked_bikeshare only."
+          },
+          {
+            "name": "leave_time",
+            "value": "",
+            "type": "query",
+            "description": "UNIX timestamp representing the desired departure time for the trip. If both `arrival_time` and `leave_time` are provided, only `leave_time` is taken into account. By default, the current time is used. "
+          },
+          {
+            "name": "arrival_time",
+            "value": "",
+            "type": "query",
+            "description": "UNIX timestamp representing the desired arrival time for the trip. If both `arrival_time` and `leave_time` are provided, only `leave_time` is taken into account."
+          },
+          {
+            "name": "accessibility_need",
+            "value": "",
+            "type": "query",
+            "description": "This parameter specifies accessibility requirements for the trip. The following values are available:\n  - `none`: No specific accessibility needs are required; any valid trip may be returned.\n  - `strict`: Returns only strictly accessible trips. Specifically, this includes only trips using accessible stops and accessible routes/vehicles.\n  - `prioritize_step_free`: Prioritizes strictly accessible results but also includes less accessible alternatives (those with unknown or non-step-free accessibility).\n"
+          },
+          {
+            "name": "walk_reluctance",
+            "value": "",
+            "type": "query",
+            "description": "This factor determines how costly walking is compared to riding in a transit vehicle within the trip plan. Values lower than 1.0 will be ignored. Transit, the app, uses a default value of 1.1, and 2.1 when the \"Minimize Walking\" mode is active."
+          },
+          {
+            "name": "walk_speed",
+            "value": "",
+            "type": "query",
+            "description": "The walking speed in meters per second for trip planning calculations. Must be between 0.5 and 5.0 m/s."
+          },
+          {
+            "name": "should_include_directions",
+            "value": "",
+            "type": "query",
+            "description": "Set to true to get step-by-step directions in the plan results."
+          },
+          {
+            "name": "should_include_pathways",
+            "value": "",
+            "type": "query",
+            "description": "Set to true to expand GTFS Pathways steps in direction items when entering or exiting a transit station. Requires should_include_directions to also be set to true."
+          },
+          {
+            "name": "max_distance_between_location_and_stop",
+            "value": "",
+            "type": "query",
+            "description": "This is the maximum distance allowed between the starting or destination locations and a transit stop. This value can be adjusted to optimize performance by limiting the search radius. By default, the value depends on the selected mode; for example, it is 1500 m for a standard `mode=transit` plan."
+          },
+          {
+            "name": "should_update_realtime",
+            "value": "",
+            "type": "query",
+            "description": "If true, the server will update the trip times in the response using real-time data, enhancing the schedule items with real time information. This happens after the initial route planning, which is still based on static schedule data."
+          },
+          {
+            "name": "consider_downtimes",
+            "value": "",
+            "type": "query",
+            "description": "If true, the planning will avoid any known downtimes identified in the service alerts. For example, if a subway is currently not working and has a severe service alert, the planner will offer results that work around that disruption. This parameter is ignored if the `mode` is set to anything other than `transit`."
+          },
+          {
+            "name": "avoid_routes",
+            "value": "",
+            "type": "query",
+            "description": "Comma-separated list of route identifiers to avoid in public transit routing. Each route identifier is a colon-separated pair of `<feed_code>:<global_route_id>`. This parameter is ignored if the `mode` is set to anything other than `transit`."
+          },
+          {
+            "name": "avoid_stops",
+            "value": "",
+            "type": "query",
+            "description": "Comma-separated list of stop identifiers to avoid in public transit routing. Each stop identifier is a colon-separated pair of `<feed_code>:<stable_stop_id>`. This parameter is ignored if the `mode` is set to anything other than `transit`."
+          },
+          {
+            "name": "allowed_modes",
+            "value": "",
+            "type": "query",
+            "description": "Comma-separated list of mode names to allow in public transit routing (e.g., \"Bus,Metro,Train\"). If specified, only routes with matching mode names will be considered for trip planning. Mode names should match the `mode_name` field returned in the route object. This parameter is ignored if the `mode` is set to anything other than `transit`."
+          },
+          {
+            "name": "excluded_modes",
+            "value": "",
+            "type": "query",
+            "description": "Comma-separated list of mode names to exclude from public transit routing (e.g., \"Bus,Ferry\"). If specified, routes with matching mode names will be excluded from trip planning. Mode names should match the `mode_name` field returned in the route object. This parameter is ignored if the `mode` is set to anything other than `transit`."
+          },
+          {
+            "name": "allowed_networks",
+            "value": "",
+            "type": "query",
+            "description": "If set, only the specified networks will be used to plan trips. A list of available networks can be obtained from [`/public/available_networks`](#operation/get-v4-public-available_networks).\n\nThis parameter will accept a comma-separated list containing network IDs, network locations or a combination of both. This parameter is ignored if the `mode` is set to anything other than `transit`.\n"
+          },
+          {
+            "name": "enable_network_previews",
+            "value": "",
+            "type": "query",
+            "description": "If set to `true`, includes network previews in trip planning. By default, network previews are excluded from route planning results. This parameter is ignored if the `mode` is set to anything other than `transit`.\n"
+          },
+          {
+            "name": "num_result",
+            "value": "",
+            "type": "query",
+            "description": "Number of results to return. This parameter is only considered for public transit only plans (mode=transit). Default is 3 for public transit only and bike plans, and 1 for walk plans."
+          },
+          {
+            "name": "disable_walk_on_multimodal_fallback",
+            "value": "",
+            "type": "query",
+            "description": "If true, disables the automatic walk fallback in multimodal trip planning. When enabled, the planner will only use the specified multimodal mode (e.g., bike, car) and only fallback to walking if no stops are accessible in the multimodal mode. This provides more control over transportation mode preferences in multimodal planning. This parameter only affects multimodal transit trips and is ignored for other modes."
+          },
+          {
+            "name": "max_num_departures",
+            "value": "",
+            "type": "query",
+            "description": "Number of departures to return per stop"
+          },
+          {
+            "name": "max_num_legs",
+            "value": "",
+            "type": "query",
+            "description": "Maximum number of public transit legs (rides) in the trip plan. This parameter can be used to limit the complexity of the trip by restricting the number of transfers. Default is 3. Values outside the accepted range of 1 to 6 will be silently clamped, except for 0 which will use the default."
+          },
+          {
+            "name": "next_departures_window",
+            "value": "",
+            "type": "query",
+            "description": "Only include departures that occur within this many minutes after the first returned departure. Departures outside this window will be excluded. If not provided, all available next departures are returned."
+          },
+          {
+            "name": "soft_timeout",
+            "value": "",
+            "type": "query",
+            "description": "Soft timeout for routing, in milliseconds. Once an optimal routing result is found AND this timeout is reached, the router will stop the search for suboptimal results."
+          },
+          {
+            "name": "walk_fallback",
+            "value": "",
+            "type": "query",
+            "description": "If true, returns a walk-only plan when the walk duration is 30 minutes or less and either no transit results are found or the walk duration is less than 1.5 times the shortest transit trip duration. The response will contain an additional result with one walk leg and walk directions (if should_include_directions is also set to true). This parameter only applies when mode=transit."
+          }
+        ]
+      },
+      "docs": "This endpoint returns a plan from the origin to the destination in different modes, including multimodal trips. \n\nThis endpoint will eventually replace the /otp/plan. The OTP endpoint is deprecated as the OpenTripPlanner endpoint it's based on is also [deprecated](https://docs.opentripplanner.org/en/latest/Changelog/#250-2024-03-13). "
+    },
+    {
+      "info": {
+        "name": "/map_layers/placemarks",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/map_layers/placemarks",
+        "params": [
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query",
+            "description": "Latitude"
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query",
+            "description": "Longitude"
+          },
+          {
+            "name": "distance",
+            "value": "",
+            "type": "query",
+            "description": "Distance in meters (as the bird flies). "
+          }
+        ]
+      },
+      "docs": "Returns placemarks for a location. Placemarks include bikeshare system docks, scooters and other shared systems. "
+    },
+    {
+      "info": {
+        "name": "/v4/public/available_networks",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/v4/public/available_networks",
+        "headers": [
+          {
+            "name": "Accept-Language",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query",
+            "description": "Optional latitude, if provided in addition to `lon` the network returned will only include networks serving that location. "
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query",
+            "description": "Optional longitude, if provided in addition to `lat` the network returned will only include networks serving that location. "
+          },
+          {
+            "name": "country_code",
+            "value": "",
+            "type": "query",
+            "description": "Optional country code (ISO 3166-1 alpha-2 format, e.g., \"US\", \"CA\") to filter networks to only those available in the specified country."
+          },
+          {
+            "name": "include_all_networks",
+            "value": "",
+            "type": "query",
+            "description": "Include additional supported networks that are filtered out by default. For example, these may include school busses and previews of upcoming agency network redesigns."
+          },
+          {
+            "name": "locale",
+            "value": "",
+            "type": "query",
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+          },
+          {
+            "name": "include_network_geometry",
+            "value": "",
+            "type": "query",
+            "description": "Include the network geometry in the response. True by default. "
+          }
+        ]
+      },
+      "docs": "List of networks available in the entire Transit system. For more information about networks, refer to the /public/stop_departures endpoint and the 'route_network_name'. Optionnaly, a lat/lon can be passed to filter networks to only the ones that support that coordinate. "
+    },
+    {
+      "info": {
+        "name": "/map_layers/available_networks",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/map_layers/available_networks"
+      },
+      "docs": "List of sharing system networks available in the entire Transit system."
+    },
+    {
+      "info": {
+        "name": "/v4/public/route_details",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/v4/public/route_details",
+        "headers": [
+          {
+            "name": "Accept-Language",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "global_route_id",
+            "value": "",
+            "type": "query",
+            "description": "Global route id provided by other endpoint on which more detail is requested. "
+          },
+          {
+            "name": "locale",
+            "value": "",
+            "type": "query",
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+          },
+          {
+            "name": "include_next_departure",
+            "value": "",
+            "type": "query",
+            "description": "If set to true, will make the stop list include the next departure for each stop. "
+          }
+        ]
+      },
+      "docs": "Get detailed information like shape and itineraries for a route"
+    },
+    {
+      "info": {
+        "name": "/v4/public/routes_for_networks",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/v4/public/routes_for_networks",
+        "headers": [
+          {
+            "name": "Accept-Language",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "network_ids",
+            "value": "",
+            "type": "query",
+            "description": "List of comma seperated Network IDs provided from [`/public/available_networks`](#operation/get-public-available_networks)"
+          },
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query",
+            "description": "Any lat of a location that serves that network. If provided, the performance of this call will be improved. "
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query",
+            "description": "Any lon of a location that serves that network. If provided, the performance of this call will be improved. "
+          },
+          {
+            "name": "locale",
+            "value": "",
+            "type": "query",
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+          },
+          {
+            "name": "include_itineraries",
+            "value": "",
+            "type": "query",
+            "description": "If set to true, the response will include itineraries detail for the listed routes. "
+          }
+        ]
+      },
+      "docs": "Return all the routes for a list of given networks."
+    },
+    {
+      "info": {
+        "name": "/v4/public/stops_for_network",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/v4/public/stops_for_network",
+        "headers": [
+          {
+            "name": "Accept-Language",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "network_id",
+            "value": "",
+            "type": "query",
+            "description": "Network ID or Network Location provided from [`/public/available_networks`](#operation/get-public-available_networks)"
+          },
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query",
+            "description": "Any lat of a location that serves that network. If provided, the performance of this call will be improved. "
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query",
+            "description": "Any lon of a location that serves that network. If provided, the performance of this call will be improved. "
+          },
+          {
+            "name": "locale",
+            "value": "",
+            "type": "query",
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+          }
+        ]
+      },
+      "docs": "Return all the stops for a given network."
+    },
+    {
+      "info": {
+        "name": "/v4/public/alerts_for_networks",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/v4/public/alerts_for_networks",
+        "headers": [
+          {
+            "name": "Accept-Language",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "network_ids",
+            "value": "",
+            "type": "query",
+            "description": "List of comma separated Network IDs provided from [`/public/available_networks`](#operation/get-public-available_networks)"
+          },
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query",
+            "description": "Any lat of a location that serves that network. If provided, the performance of this call will be improved."
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query",
+            "description": "Any lon of a location that serves that network. If provided, the performance of this call will be improved."
+          },
+          {
+            "name": "show_active_alerts_only",
+            "value": "",
+            "type": "query",
+            "description": "When true, only returns alerts whose active periods intersect with the current time. Alerts with no end time are considered active indefinitely."
+          },
+          {
+            "name": "locale",
+            "value": "",
+            "type": "query",
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+          }
+        ]
+      },
+      "docs": "Return all active service alerts affecting routes in the specified networks. Each alert includes detailed information about affected routes, stops, and trips."
+    },
+    {
+      "info": {
+        "name": "/v4/public/latest_update_for_network",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/v4/public/latest_update_for_network",
+        "params": [
+          {
+            "name": "network_id",
+            "value": "",
+            "type": "query",
+            "description": "Network ID or Network Location provided from [`/public/available_networks`](#operation/get-public-available_networks)"
+          },
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query",
+            "description": "Any lat of a location that serves that network. If provided, the performance of this call will be improved. "
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query",
+            "description": "Any lon of a location that serves that network. If provided, the performance of this call will be improved. "
+          }
+        ]
+      },
+      "docs": "Return the time of the most recent data update for a given network ID or network location"
+    },
+    {
+      "info": {
+        "name": "/v4/public/search_stops",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/v4/public/search_stops",
+        "headers": [
+          {
+            "name": "Accept-Language",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "lat",
+            "value": "",
+            "type": "query",
+            "description": "Latitude of the approximate area of the search."
+          },
+          {
+            "name": "lon",
+            "value": "",
+            "type": "query",
+            "description": "Longitude of the approximate area of the search."
+          },
+          {
+            "name": "query",
+            "value": "",
+            "type": "query",
+            "description": "Search term. Will be matched against the `stop_name` and `stop_code` of potential stops from the [GTFS](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt)."
+          },
+          {
+            "name": "pickup_dropoff_filter",
+            "value": "",
+            "type": "query",
+            "description": "For routable stops, futher filter based on whether a rider can embark or disembark at this stop.\n* `PickupAllowedOnly`: Riders can board at this stop on at least one trip.\n* `DropoffAllowedOnly`: Riders can exit at this stop on at least one trip.\n* `Everything`: All stops.\n\nFor further reference, see the [GTFS pickup_type and drop_off_type fields](https://developers.google.com/transit/gtfs/reference#stop_timestxt).'\n"
+          },
+          {
+            "name": "max_num_results",
+            "value": "",
+            "type": "query",
+            "description": "Maximum number of results to return. If there are few matches, less results than requested will be returned."
+          },
+          {
+            "name": "max_distance",
+            "value": "",
+            "type": "query",
+            "description": "Optional maximum distance in meters from the search coordinates (lat, lon) to filter results. Only stops within this distance will be returned. If not provided, no distance filtering is applied."
+          },
+          {
+            "name": "locale",
+            "value": "",
+            "type": "query",
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+          }
+        ]
+      },
+      "docs": "Given coordinates of an approximate area to search, find transit stops whose names or stop codes match the given search term, from feeds which serve the search area."
+    },
+    {
+      "info": {
+        "name": "/v4/public/trip_details",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/v4/public/trip_details",
+        "headers": [
+          {
+            "name": "Accept-Language",
+            "value": ""
+          }
+        ],
+        "params": [
+          {
+            "name": "trip_search_key",
+            "value": "",
+            "type": "query",
+            "description": "A trip identifier obtained from other endpoints like `/v3/public/stop_departures`. This value will frequently change as feeds are updated and should be refetched regularly before use in further requests."
+          },
+          {
+            "name": "locale",
+            "value": "",
+            "type": "query",
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+          }
+        ]
+      },
+      "docs": "Provides scheduled times and stop information for an entire trip"
+    },
+    {
+      "info": {
+        "name": "/v4/vehicles",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://external.transitapp.com/v4/vehicles",
+        "params": [
+          {
+            "name": "global_route_id",
+            "value": "",
+            "type": "query",
+            "description": "Global route ID to get vehicles for"
+          },
+          {
+            "name": "direction_id",
+            "value": "",
+            "type": "query",
+            "description": "Optional direction ID to filter vehicles by direction"
+          }
+        ]
+      },
+      "docs": "Returns real-time vehicle positions for a given route"
+    }
+  ],
+  "bundled": true
+}

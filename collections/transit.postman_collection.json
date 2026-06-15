@@ -1,0 +1,3515 @@
+{
+  "item": [
+    {
+      "id": "d415aafb-cd09-481f-8294-2cebb309b2a7",
+      "name": "/v4/public/nearby routes",
+      "request": {
+        "name": "/v4/public/nearby routes",
+        "description": {
+          "content": "Returns routes around a location",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v4",
+            "public",
+            "nearby_routes"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<double>",
+              "description": "(Required) Latitude"
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<double>",
+              "description": "(Required) Longitude"
+            },
+            {
+              "disabled": false,
+              "key": "max_distance",
+              "value": "150",
+              "description": "Maximum radius of search from the request location (in meters)"
+            },
+            {
+              "disabled": false,
+              "key": "locale",
+              "value": "<string>",
+              "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+            },
+            {
+              "disabled": false,
+              "key": "should_update_realtime",
+              "value": "true",
+              "description": "Boolean telling the system if it should update real time or just return schedule information. "
+            },
+            {
+              "disabled": false,
+              "key": "max_num_departures",
+              "value": "3",
+              "description": "Number of departures to return per merged itinerary"
+            },
+            {
+              "disabled": false,
+              "key": "time",
+              "value": "<integer>",
+              "description": "Optional epoch timestamp for getting routes at a specific time. If not provided, current time is used."
+            },
+            {
+              "disabled": false,
+              "key": "include_stops_and_shapes",
+              "value": "false",
+              "description": "Boolean to control whether stops and shapes are included in itineraries. When false, only itinerary metadata is returned without stops and shape polylines, reducing response size."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+            "key": "Accept-Language",
+            "value": "<string>"
+          },
+          {
+            "key": "Content-Type",
+            "value": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        }
+      },
+      "response": [
+        {
+          "id": "6a73ceae-fb2f-464a-bc37-80add316cfb4",
+          "name": "List of nearby routes",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "nearby_routes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "45.526168"
+                },
+                {
+                  "key": "lon",
+                  "value": "-73.595061"
+                },
+                {
+                  "key": "max_distance",
+                  "value": "1500"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                },
+                {
+                  "key": "should_update_realtime",
+                  "value": "true"
+                },
+                {
+                  "key": "max_num_departures",
+                  "value": "3"
+                },
+                {
+                  "key": "time",
+                  "value": "1641024000"
+                },
+                {
+                  "key": "include_stops_and_shapes",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "null",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "6e36b8a0-3e7a-46ae-90a7-2ce8dfdc3cbe",
+          "name": "Latitude or longitude is invalid or missing",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "nearby_routes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "45.526168"
+                },
+                {
+                  "key": "lon",
+                  "value": "-73.595061"
+                },
+                {
+                  "key": "max_distance",
+                  "value": "1500"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                },
+                {
+                  "key": "should_update_realtime",
+                  "value": "true"
+                },
+                {
+                  "key": "max_num_departures",
+                  "value": "3"
+                },
+                {
+                  "key": "time",
+                  "value": "1641024000"
+                },
+                {
+                  "key": "include_stops_and_shapes",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              }
+            ],
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "ad8bd546-e9c8-46af-8333-e74aa8f2b3ef",
+          "name": "Internal server error causing no result",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "nearby_routes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "45.526168"
+                },
+                {
+                  "key": "lon",
+                  "value": "-73.595061"
+                },
+                {
+                  "key": "max_distance",
+                  "value": "1500"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                },
+                {
+                  "key": "should_update_realtime",
+                  "value": "true"
+                },
+                {
+                  "key": "max_num_departures",
+                  "value": "3"
+                },
+                {
+                  "key": "time",
+                  "value": "1641024000"
+                },
+                {
+                  "key": "include_stops_and_shapes",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              }
+            ],
+            "method": "GET",
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "dc86b2f2-7907-45d0-bd24-1f5de3fc7db7",
+      "name": "/v4/public/nearby stops",
+      "request": {
+        "name": "/v4/public/nearby stops",
+        "description": {
+          "content": "Returns stops around a location",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v4",
+            "public",
+            "nearby_stops"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<double>",
+              "description": "(Required) Latitude"
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<double>",
+              "description": "(Required) Longitude"
+            },
+            {
+              "disabled": false,
+              "key": "max_distance",
+              "value": "150",
+              "description": "Maximum radius of search from the request location (in meters)"
+            },
+            {
+              "disabled": false,
+              "key": "stop_filter",
+              "value": "Routable",
+              "description": "Determines which location types from the [GTFS](https://developers.google.com/transit/gtfs/reference#stopstxt) are included in the response.\n* Routable (GTFS `location_type` 0): Stops which are served by routes\n* EntrancesAndStopsOutsideStations: Entrances to transit stations and freestanding outdoor stops\n* Entrances (GTFS `location_type` 2): Entrances to stations\n* Any: All stops\n"
+            },
+            {
+              "disabled": false,
+              "key": "pickup_dropoff_filter",
+              "value": "<string>",
+              "description": "For routable stops, futher filter based on whether a rider can embark or disembark at this stop.\n* `PickupAllowedOnly`: Riders can board at this stop on at least one trip.\n* `DropoffAllowedOnly`: Riders can exit at this stop on at least one trip.\n* `Everything`: All stops.\n\nFor further reference, see the [GTFS pickup_type and drop_off_type fields](https://developers.google.com/transit/gtfs/reference#stop_timestxt).'\n"
+            },
+            {
+              "disabled": false,
+              "key": "locale",
+              "value": "<string>",
+              "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+            "key": "Accept-Language",
+            "value": "<string>"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "ee48be8f-4e6c-41d6-b264-efe1949d9507",
+          "name": "List of nearby stops",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "nearby_stops"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "45.526168"
+                },
+                {
+                  "key": "lon",
+                  "value": "-73.595061"
+                },
+                {
+                  "key": "max_distance",
+                  "value": "1500"
+                },
+                {
+                  "key": "stop_filter",
+                  "value": "Routable"
+                },
+                {
+                  "key": "pickup_dropoff_filter",
+                  "value": "<string>"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"stops\": [\n    {\n      \"global_stop_id\": \"1:94380\",\n      \"location_type\": 0,\n      \"stop_lat\": 45.526168077787894,\n      \"stop_lon\": -73.59506067289408,\n      \"stop_name\": \"De Gaspé / Maguire\",\n      \"distance\": 45,\n      \"parent_station\": {\n        \"global_stop_id\": \"1:94380\",\n        \"location_type\": \"string\",\n        \"rt_stop_id\": \"string\",\n        \"station_code\": \"string\",\n        \"station_name\": \"string\"\n      },\n      \"route_type\": 3441,\n      \"stop_code\": \"51752\",\n      \"rt_stop_id\": \"51752\",\n      \"wheelchair_boarding\": 1\n    },\n    {\n      \"global_stop_id\": \"1:94380\",\n      \"location_type\": 0,\n      \"stop_lat\": 45.526168077787894,\n      \"stop_lon\": -73.59506067289408,\n      \"stop_name\": \"De Gaspé / Maguire\",\n      \"distance\": 45,\n      \"parent_station\": {\n        \"global_stop_id\": \"1:94380\",\n        \"location_type\": \"string\",\n        \"rt_stop_id\": \"string\",\n        \"station_code\": \"string\",\n        \"station_name\": \"string\"\n      },\n      \"route_type\": 5004,\n      \"stop_code\": \"51752\",\n      \"rt_stop_id\": \"51752\",\n      \"wheelchair_boarding\": 1\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "7b808c18-e40f-4f6b-ae8a-2eb8acb58f81",
+          "name": "Latitude or longitude is invalid or missing",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "nearby_stops"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "45.526168"
+                },
+                {
+                  "key": "lon",
+                  "value": "-73.595061"
+                },
+                {
+                  "key": "max_distance",
+                  "value": "1500"
+                },
+                {
+                  "key": "stop_filter",
+                  "value": "Routable"
+                },
+                {
+                  "key": "pickup_dropoff_filter",
+                  "value": "<string>"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "dd672814-a495-4ec5-8204-47ce62742641",
+          "name": "Internal server error causing no result",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "nearby_stops"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "45.526168"
+                },
+                {
+                  "key": "lon",
+                  "value": "-73.595061"
+                },
+                {
+                  "key": "max_distance",
+                  "value": "1500"
+                },
+                {
+                  "key": "stop_filter",
+                  "value": "Routable"
+                },
+                {
+                  "key": "pickup_dropoff_filter",
+                  "value": "<string>"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "467d4923-e1a2-4461-9d0e-842f241461c5",
+      "name": "/v4/public/stop departures",
+      "request": {
+        "name": "/v4/public/stop departures",
+        "description": {
+          "content": "Get upcoming departures for all routes serving one or more stops, with optional real time information",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v4",
+            "public",
+            "stop_departures"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "global_stop_ids",
+              "value": "<string>",
+              "description": "(Required) Comma-separated list of global stop IDs to get departures for multiple stops at once. Must contain at most 100 valid stop IDs. Either this parameter or global_stop_id must be provided."
+            },
+            {
+              "disabled": false,
+              "key": "time",
+              "value": "The current time when the request was issued",
+              "description": "UNIX timestamp representing the time for which departures should be determined"
+            },
+            {
+              "disabled": false,
+              "key": "remove_cancelled",
+              "value": "false",
+              "description": "Remove cancelled schedule items from the results"
+            },
+            {
+              "disabled": false,
+              "key": "locale",
+              "value": "<string>",
+              "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+            },
+            {
+              "disabled": false,
+              "key": "should_update_realtime",
+              "value": "true",
+              "description": "Boolean telling the system if it should update real time or just return schedule information. "
+            },
+            {
+              "disabled": false,
+              "key": "max_num_departures",
+              "value": "3",
+              "description": "Number of departures to return per merged itinerary"
+            },
+            {
+              "disabled": false,
+              "key": "include_stops_and_shapes",
+              "value": "false",
+              "description": "Boolean to control whether stops and shapes are included in itineraries. When false, only itinerary metadata is returned without stops and shape polylines, reducing response size."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+            "key": "Accept-Language",
+            "value": "<string>"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "96422532-5c92-49fc-808c-7036ebb0ff95",
+          "name": "List of upcoming departures at stop, grouped by route, then by merged itinerary",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "stop_departures"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "global_stop_ids",
+                  "value": "1:82774,2:54321,1:99999"
+                },
+                {
+                  "key": "time",
+                  "value": "The current time when the request was issued"
+                },
+                {
+                  "key": "remove_cancelled",
+                  "value": "false"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                },
+                {
+                  "key": "should_update_realtime",
+                  "value": "true"
+                },
+                {
+                  "key": "max_num_departures",
+                  "value": "3"
+                },
+                {
+                  "key": "include_stops_and_shapes",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "null",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "5cfcc8cf-943e-414f-8288-7e729ceab339",
+          "name": "Invalid global stop ID, missing required parameters, or no result could be found",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "stop_departures"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "global_stop_ids",
+                  "value": "1:82774,2:54321,1:99999"
+                },
+                {
+                  "key": "time",
+                  "value": "The current time when the request was issued"
+                },
+                {
+                  "key": "remove_cancelled",
+                  "value": "false"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                },
+                {
+                  "key": "should_update_realtime",
+                  "value": "true"
+                },
+                {
+                  "key": "max_num_departures",
+                  "value": "3"
+                },
+                {
+                  "key": "include_stops_and_shapes",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "790cb3da-0c70-4aa1-bb09-e8cc7aa9310f",
+      "name": "/v4/public/estimate_plan_duration",
+      "request": {
+        "name": "/v4/public/estimate_plan_duration",
+        "description": {
+          "content": "This endpoint returns an estimated duration for a trip plan based on the provided origin and destination. \n\nThe query params used in this endpoint are the same as /public/plan, except for the more limited mode selection, real time not available and multiple results aren't provided. ",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v4",
+            "public",
+            "estimate_plan_duration"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "from_lat",
+              "value": "<number>",
+              "description": "Latitude of the starting location for the trip. Required unless from_global_stop_id is provided."
+            },
+            {
+              "disabled": false,
+              "key": "from_lon",
+              "value": "<number>",
+              "description": "Longitude of the starting location for the trip. Required unless from_global_stop_id is provided."
+            },
+            {
+              "disabled": false,
+              "key": "from_global_stop_id",
+              "value": "<string>",
+              "description": "Global stop ID for the starting location. Alternative to from_lat/from_lon parameters."
+            },
+            {
+              "disabled": false,
+              "key": "to_lat",
+              "value": "<number>",
+              "description": "Latitude of the destination location for the trip. Required unless to_global_stop_id is provided."
+            },
+            {
+              "disabled": false,
+              "key": "to_lon",
+              "value": "<number>",
+              "description": "Longitude of the destination location for the trip. Required unless to_global_stop_id is provided."
+            },
+            {
+              "disabled": false,
+              "key": "to_global_stop_id",
+              "value": "<string>",
+              "description": "Global stop ID for the destination location. Alternative to to_lat/to_lon parameters."
+            },
+            {
+              "disabled": false,
+              "key": "mode",
+              "value": "transit",
+              "description": "The primary mode of transportation for the trip"
+            },
+            {
+              "disabled": false,
+              "key": "secondary_mode",
+              "value": "<string>",
+              "description": "The secondary mode of transportation for the trip, if applicable"
+            },
+            {
+              "disabled": false,
+              "key": "leave_time",
+              "value": "<number>",
+              "description": "UNIX timestamp representing the desired departure time for the trip"
+            },
+            {
+              "disabled": false,
+              "key": "arrival_time",
+              "value": "<number>",
+              "description": "UNIX timestamp representing the desired arrival time for the trip"
+            },
+            {
+              "disabled": false,
+              "key": "accessibility_need",
+              "value": "none",
+              "description": "This parameter specifies accessibility requirements for the trip. The following values are available:\n  - `none`: No specific accessibility needs are required; any valid trip may be returned.\n  - `strict`: Returns only strictly accessible trips. Specifically, this includes only trips using accessible stops and accessible routes/vehicles.\n  - `prioritize_step_free`: Prioritizes strictly accessible results but also includes less accessible alternatives (those with unknown or non-step-free accessibility).\n"
+            },
+            {
+              "disabled": false,
+              "key": "walk_reluctance",
+              "value": "<number>",
+              "description": "A factor that determines how much walking costly compared to riding in a transit vehicle in the trip plan. Values lower than 1.0 will be ignored. Transit uses the value of 1.1 by default and 2.1 when in the \"Minimize Walking\" mode. "
+            },
+            {
+              "disabled": false,
+              "key": "max_distance_between_location_and_stop",
+              "value": "<number>",
+              "description": "The maximum distance allowed between the starting or destination locations and a transit stop. This value can be adjusted to optimize performance by limiting the search radius. This value can only be customized if `mode=transit`, and the default is 1500m."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "5905a6e0-1aab-4f89-b39d-4c05df724190",
+          "name": "This endpoint provides an estimated trip duration in seconds",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "estimate_plan_duration"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "from_lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "from_lon",
+                  "value": "<number>"
+                },
+                {
+                  "key": "from_global_stop_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "to_lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "to_lon",
+                  "value": "<number>"
+                },
+                {
+                  "key": "to_global_stop_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "mode",
+                  "value": "transit"
+                },
+                {
+                  "key": "secondary_mode",
+                  "value": "<string>"
+                },
+                {
+                  "key": "leave_time",
+                  "value": "<number>"
+                },
+                {
+                  "key": "arrival_time",
+                  "value": "<number>"
+                },
+                {
+                  "key": "accessibility_need",
+                  "value": "none"
+                },
+                {
+                  "key": "walk_reluctance",
+                  "value": "<number>"
+                },
+                {
+                  "key": "max_distance_between_location_and_stop",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"duration\": 5170.499958313959,\n  \"type\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "54de6e31-f98d-431a-bcdc-f55a0390368c",
+      "name": "/v4/public/plan",
+      "request": {
+        "name": "/v4/public/plan",
+        "description": {
+          "content": "This endpoint returns a plan from the origin to the destination in different modes, including multimodal trips. \n\nThis endpoint will eventually replace the /otp/plan. The OTP endpoint is deprecated as the OpenTripPlanner endpoint it's based on is also [deprecated](https://docs.opentripplanner.org/en/latest/Changelog/#250-2024-03-13). ",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v4",
+            "public",
+            "plan"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "from_lat",
+              "value": "<double>",
+              "description": "Latitude of the starting location for the trip. Required unless from_global_stop_id or from_global_stop_ids is provided."
+            },
+            {
+              "disabled": false,
+              "key": "from_lon",
+              "value": "<double>",
+              "description": "Longitude of the starting location for the trip. Required unless from_global_stop_id or from_global_stop_ids is provided."
+            },
+            {
+              "disabled": false,
+              "key": "from_global_stop_id",
+              "value": "<string>",
+              "description": "Single global stop ID for the starting location. Kept for backward compatibility; prefer from_global_stop_ids (plural) to describe a correspondence zone."
+            },
+            {
+              "disabled": false,
+              "key": "from_global_stop_ids",
+              "value": "<string>",
+              "description": "Comma-separated list of global stop IDs describing the origin correspondence zone (e.g. all platforms of a hub across different networks/parent stations). Each entry may be a platform stop id or a station stop id; stations are automatically expanded to their child platform stops when deciding whether to strip the initial walk leg.\nRouting origin: if from_lat and from_lon are provided, the coordinates are used to plan the trip. Otherwise the first valid stop's location from the list is used as a fallback.\nWalk-leg filtering: the initial walk leg is removed from a plan only when the itinerary actually boards at one of the provided stops (or at their parent station). Plans that board at an unrelated nearby stop keep their walk leg so the client can still present directions to the stop."
+            },
+            {
+              "disabled": false,
+              "key": "to_lat",
+              "value": "<double>",
+              "description": "Latitude of the destination location for the trip. Required unless to_global_stop_id or to_global_stop_ids is provided."
+            },
+            {
+              "disabled": false,
+              "key": "to_lon",
+              "value": "<double>",
+              "description": "Longitude of the destination location for the trip. Required unless to_global_stop_id or to_global_stop_ids is provided."
+            },
+            {
+              "disabled": false,
+              "key": "to_global_stop_id",
+              "value": "<string>",
+              "description": "Single global stop ID for the destination location. Kept for backward compatibility; prefer to_global_stop_ids (plural) to describe a correspondence zone."
+            },
+            {
+              "disabled": false,
+              "key": "to_global_stop_ids",
+              "value": "<string>",
+              "description": "Comma-separated list of global stop IDs describing the destination correspondence zone. Behaves symmetrically to from_global_stop_ids: coordinates win for routing when provided, otherwise the first valid stop's location is used; the final walk leg is stripped only when the itinerary actually alights at one of the provided stops."
+            },
+            {
+              "disabled": false,
+              "key": "mode",
+              "value": "transit",
+              "description": "The primary mode of transportation for the trip"
+            },
+            {
+              "disabled": false,
+              "key": "secondary_mode",
+              "value": "<string>",
+              "description": "This specifies the secondary mode of transportation for the trip, if applicable.\n\nThis value allows for creating multimodal trips mixing transit and another mode. If a value other than walk is specified here, primary_mode must be set to transit.\n\nWhen this value is set, the planner attempts to replace the first and last legs of the trip with the specified mode if advantageous to do so. If it is not advantageous, a walk leg might be used instead.\n\nNote that the results generated are optimal given the specified modes, but they might not represent the absolute optimal trip overall. Depending on the context, it may be advantageous to compare the result of the multimodal plan against a direct plan (using only the primary mode) to ensure true optimality (i.e., a transit + microtransit result should likely be disregarded if the transit-only plan is faster)."
+            },
+            {
+              "disabled": false,
+              "key": "sharing_system_type",
+              "value": "docked_bikeshare",
+              "description": "Specifies the type of shared mobility system when mode is set to shared_mobility.\n\n- docked_bikeshare: Traditional docked bikeshare systems\n- dockless_bikeshare: Dockless bikes\n- scooters: Electric scooters\n\nIf not specified, defaults to docked_bikeshare only."
+            },
+            {
+              "disabled": false,
+              "key": "leave_time",
+              "value": "<number>",
+              "description": "UNIX timestamp representing the desired departure time for the trip. If both `arrival_time` and `leave_time` are provided, only `leave_time` is taken into account. By default, the current time is used. "
+            },
+            {
+              "disabled": false,
+              "key": "arrival_time",
+              "value": "<number>",
+              "description": "UNIX timestamp representing the desired arrival time for the trip. If both `arrival_time` and `leave_time` are provided, only `leave_time` is taken into account."
+            },
+            {
+              "disabled": false,
+              "key": "accessibility_need",
+              "value": "none",
+              "description": "This parameter specifies accessibility requirements for the trip. The following values are available:\n  - `none`: No specific accessibility needs are required; any valid trip may be returned.\n  - `strict`: Returns only strictly accessible trips. Specifically, this includes only trips using accessible stops and accessible routes/vehicles.\n  - `prioritize_step_free`: Prioritizes strictly accessible results but also includes less accessible alternatives (those with unknown or non-step-free accessibility).\n"
+            },
+            {
+              "disabled": false,
+              "key": "walk_reluctance",
+              "value": "<number>",
+              "description": "This factor determines how costly walking is compared to riding in a transit vehicle within the trip plan. Values lower than 1.0 will be ignored. Transit, the app, uses a default value of 1.1, and 2.1 when the \"Minimize Walking\" mode is active."
+            },
+            {
+              "disabled": false,
+              "key": "walk_speed",
+              "value": "<number>",
+              "description": "The walking speed in meters per second for trip planning calculations. Must be between 0.5 and 5.0 m/s."
+            },
+            {
+              "disabled": false,
+              "key": "should_include_directions",
+              "value": "false",
+              "description": "Set to true to get step-by-step directions in the plan results."
+            },
+            {
+              "disabled": false,
+              "key": "should_include_pathways",
+              "value": "false",
+              "description": "Set to true to expand GTFS Pathways steps in direction items when entering or exiting a transit station. Requires should_include_directions to also be set to true."
+            },
+            {
+              "disabled": false,
+              "key": "max_distance_between_location_and_stop",
+              "value": "<number>",
+              "description": "This is the maximum distance allowed between the starting or destination locations and a transit stop. This value can be adjusted to optimize performance by limiting the search radius. By default, the value depends on the selected mode; for example, it is 1500 m for a standard `mode=transit` plan."
+            },
+            {
+              "disabled": false,
+              "key": "should_update_realtime",
+              "value": "false",
+              "description": "If true, the server will update the trip times in the response using real-time data, enhancing the schedule items with real time information. This happens after the initial route planning, which is still based on static schedule data."
+            },
+            {
+              "disabled": false,
+              "key": "consider_downtimes",
+              "value": "false",
+              "description": "If true, the planning will avoid any known downtimes identified in the service alerts. For example, if a subway is currently not working and has a severe service alert, the planner will offer results that work around that disruption. This parameter is ignored if the `mode` is set to anything other than `transit`."
+            },
+            {
+              "disabled": false,
+              "key": "avoid_routes",
+              "value": "<string>",
+              "description": "Comma-separated list of route identifiers to avoid in public transit routing. Each route identifier is a colon-separated pair of `<feed_code>:<global_route_id>`. This parameter is ignored if the `mode` is set to anything other than `transit`."
+            },
+            {
+              "disabled": false,
+              "key": "avoid_stops",
+              "value": "<string>",
+              "description": "Comma-separated list of stop identifiers to avoid in public transit routing. Each stop identifier is a colon-separated pair of `<feed_code>:<stable_stop_id>`. This parameter is ignored if the `mode` is set to anything other than `transit`."
+            },
+            {
+              "disabled": false,
+              "key": "allowed_modes",
+              "value": "<string>",
+              "description": "Comma-separated list of mode names to allow in public transit routing (e.g., \"Bus,Metro,Train\"). If specified, only routes with matching mode names will be considered for trip planning. Mode names should match the `mode_name` field returned in the route object. This parameter is ignored if the `mode` is set to anything other than `transit`."
+            },
+            {
+              "disabled": false,
+              "key": "excluded_modes",
+              "value": "<string>",
+              "description": "Comma-separated list of mode names to exclude from public transit routing (e.g., \"Bus,Ferry\"). If specified, routes with matching mode names will be excluded from trip planning. Mode names should match the `mode_name` field returned in the route object. This parameter is ignored if the `mode` is set to anything other than `transit`."
+            },
+            {
+              "disabled": false,
+              "key": "allowed_networks",
+              "value": "<string>",
+              "description": "If set, only the specified networks will be used to plan trips. A list of available networks can be obtained from [`/public/available_networks`](#operation/get-v4-public-available_networks).\n\nThis parameter will accept a comma-separated list containing network IDs, network locations or a combination of both. This parameter is ignored if the `mode` is set to anything other than `transit`.\n"
+            },
+            {
+              "disabled": false,
+              "key": "enable_network_previews",
+              "value": "false",
+              "description": "If set to `true`, includes network previews in trip planning. By default, network previews are excluded from route planning results. This parameter is ignored if the `mode` is set to anything other than `transit`.\n"
+            },
+            {
+              "disabled": false,
+              "key": "num_result",
+              "value": "3",
+              "description": "Number of results to return. This parameter is only considered for public transit only plans (mode=transit). Default is 3 for public transit only and bike plans, and 1 for walk plans."
+            },
+            {
+              "disabled": false,
+              "key": "disable_walk_on_multimodal_fallback",
+              "value": "false",
+              "description": "If true, disables the automatic walk fallback in multimodal trip planning. When enabled, the planner will only use the specified multimodal mode (e.g., bike, car) and only fallback to walking if no stops are accessible in the multimodal mode. This provides more control over transportation mode preferences in multimodal planning. This parameter only affects multimodal transit trips and is ignored for other modes."
+            },
+            {
+              "disabled": false,
+              "key": "max_num_departures",
+              "value": "3",
+              "description": "Number of departures to return per stop"
+            },
+            {
+              "disabled": false,
+              "key": "max_num_legs",
+              "value": "3",
+              "description": "Maximum number of public transit legs (rides) in the trip plan. This parameter can be used to limit the complexity of the trip by restricting the number of transfers. Default is 3. Values outside the accepted range of 1 to 6 will be silently clamped, except for 0 which will use the default."
+            },
+            {
+              "disabled": false,
+              "key": "next_departures_window",
+              "value": "<integer>",
+              "description": "Only include departures that occur within this many minutes after the first returned departure. Departures outside this window will be excluded. If not provided, all available next departures are returned."
+            },
+            {
+              "disabled": false,
+              "key": "soft_timeout",
+              "value": "<number>",
+              "description": "Soft timeout for routing, in milliseconds. Once an optimal routing result is found AND this timeout is reached, the router will stop the search for suboptimal results."
+            },
+            {
+              "disabled": false,
+              "key": "walk_fallback",
+              "value": "false",
+              "description": "If true, returns a walk-only plan when the walk duration is 30 minutes or less and either no transit results are found or the walk duration is less than 1.5 times the shortest transit trip duration. The response will contain an additional result with one walk leg and walk directions (if should_include_directions is also set to true). This parameter only applies when mode=transit."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "ba1a4ea9-2a67-432b-8aeb-fae3f80a9a50",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "plan"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "from_lat",
+                  "value": "<double>"
+                },
+                {
+                  "key": "from_lon",
+                  "value": "<double>"
+                },
+                {
+                  "key": "from_global_stop_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "from_global_stop_ids",
+                  "value": "<string>"
+                },
+                {
+                  "key": "to_lat",
+                  "value": "<double>"
+                },
+                {
+                  "key": "to_lon",
+                  "value": "<double>"
+                },
+                {
+                  "key": "to_global_stop_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "to_global_stop_ids",
+                  "value": "<string>"
+                },
+                {
+                  "key": "mode",
+                  "value": "transit"
+                },
+                {
+                  "key": "secondary_mode",
+                  "value": "<string>"
+                },
+                {
+                  "key": "sharing_system_type",
+                  "value": "docked_bikeshare"
+                },
+                {
+                  "key": "leave_time",
+                  "value": "<number>"
+                },
+                {
+                  "key": "arrival_time",
+                  "value": "<number>"
+                },
+                {
+                  "key": "accessibility_need",
+                  "value": "none"
+                },
+                {
+                  "key": "walk_reluctance",
+                  "value": "<number>"
+                },
+                {
+                  "key": "walk_speed",
+                  "value": "<number>"
+                },
+                {
+                  "key": "should_include_directions",
+                  "value": "false"
+                },
+                {
+                  "key": "should_include_pathways",
+                  "value": "false"
+                },
+                {
+                  "key": "max_distance_between_location_and_stop",
+                  "value": "<number>"
+                },
+                {
+                  "key": "should_update_realtime",
+                  "value": "false"
+                },
+                {
+                  "key": "consider_downtimes",
+                  "value": "false"
+                },
+                {
+                  "key": "avoid_routes",
+                  "value": "<string>"
+                },
+                {
+                  "key": "avoid_stops",
+                  "value": "<string>"
+                },
+                {
+                  "key": "allowed_modes",
+                  "value": "<string>"
+                },
+                {
+                  "key": "excluded_modes",
+                  "value": "<string>"
+                },
+                {
+                  "key": "allowed_networks",
+                  "value": "<string>"
+                },
+                {
+                  "key": "enable_network_previews",
+                  "value": "false"
+                },
+                {
+                  "key": "num_result",
+                  "value": "3"
+                },
+                {
+                  "key": "disable_walk_on_multimodal_fallback",
+                  "value": "false"
+                },
+                {
+                  "key": "max_num_departures",
+                  "value": "3"
+                },
+                {
+                  "key": "max_num_legs",
+                  "value": "3"
+                },
+                {
+                  "key": "next_departures_window",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "soft_timeout",
+                  "value": "<number>"
+                },
+                {
+                  "key": "walk_fallback",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"results\": [\n    {\n      \"accessibility\": \"WheelchairStrict\",\n      \"duration\": 1517,\n      \"end_time\": 1746043067,\n      \"legs\": [\n        {\n          \"distance\": 281.6752572370887,\n          \"duration\": 330,\n          \"end_time\": 1746041880,\n          \"leg_mode\": \"walk\",\n          \"polyline\": \"og}tGzch`MeCfH??CFAD??aAlC??ZZTFFB@EZjA\",\n          \"start_time\": 1746041550\n        },\n        {\n          \"departures\": [\n            {\n              \"departure_time\": 1746041880,\n              \"is_cancelled\": false,\n              \"is_real_time\": false,\n              \"plan_details\": {\n                \"arrival_schedule_item\": {\n                  \"departure_time\": 1746042720,\n                  \"is_cancelled\": false,\n                  \"is_real_time\": false,\n                  \"rt_trip_id\": \"284450730\",\n                  \"scheduled_departure_time\": 1746042720,\n                  \"trip_search_key\": \"STM:48373262:2:1:129\",\n                  \"wheelchair_accessible\": 1\n                },\n                \"stop_schedule_items\": [\n                  {\n                    \"global_stop_id\": \"STM:17989\",\n                    \"departure_time\": 1746041880,\n                    \"is_cancelled\": false,\n                    \"is_real_time\": false,\n                    \"rt_trip_id\": \"284450730\",\n                    \"scheduled_departure_time\": 1746041880,\n                    \"trip_search_key\": \"STM:48373262:2:1:129\",\n                    \"wheelchair_accessible\": 1\n                  },\n                  {\n                    \"global_stop_id\": \"STM:18045\",\n                    \"departure_time\": 1746042120,\n                    \"is_cancelled\": false,\n                    \"is_real_time\": false,\n                    \"rt_trip_id\": \"284450730\",\n                    \"scheduled_departure_time\": 1746042120,\n                    \"trip_search_key\": \"STM:48373262:2:1:129\",\n                    \"wheelchair_accessible\": 1\n                  },\n                  {\n                    \"global_stop_id\": \"STM:18102\",\n                    \"departure_time\": 1746042720,\n                    \"is_cancelled\": false,\n                    \"is_real_time\": false,\n                    \"rt_trip_id\": \"284450730\",\n                    \"scheduled_departure_time\": 1746042720,\n                    \"trip_search_key\": \"STM:48373262:2:1:129\",\n                    \"wheelchair_accessible\": 1\n                  }\n                ],\n                \"global_route_id\": \"STM:863\",\n                \"internal_itinerary_id\": \"2:65535:false\"\n              },\n              \"rt_trip_id\": \"284450730\",\n              \"scheduled_departure_time\": 1746041880,\n              \"trip_search_key\": \"STM:48373262:2:1:129\",\n              \"wheelchair_accessible\": 1\n            },\n            {\n              \"departure_time\": 1746042120,\n              \"is_cancelled\": false,\n              \"is_real_time\": false,\n              \"plan_details\": {\n                \"arrival_schedule_item\": {\n                  \"departure_time\": 1746042960,\n                  \"is_cancelled\": false,\n                  \"is_real_time\": false,\n                  \"rt_trip_id\": \"284450769\",\n                  \"scheduled_departure_time\": 1746042960,\n                  \"trip_search_key\": \"STM:48373262:2:1:130\",\n                  \"wheelchair_accessible\": 1\n                },\n                \"stop_schedule_items\": [\n                  {\n                    \"global_stop_id\": \"STM:17989\",\n                    \"departure_time\": 1746042120,\n                    \"is_cancelled\": false,\n                    \"is_real_time\": false,\n                    \"rt_trip_id\": \"284450769\",\n                    \"scheduled_departure_time\": 1746042120,\n                    \"trip_search_key\": \"STM:48373262:2:1:130\",\n                    \"wheelchair_accessible\": 1\n                  },\n                  {\n                    \"global_stop_id\": \"STM:18045\",\n                    \"departure_time\": 1746042360,\n                    \"is_cancelled\": false,\n                    \"is_real_time\": false,\n                    \"rt_trip_id\": \"284450769\",\n                    \"scheduled_departure_time\": 1746042360,\n                    \"trip_search_key\": \"STM:48373262:2:1:130\",\n                    \"wheelchair_accessible\": 1\n                  },\n                  {\n                    \"global_stop_id\": \"STM:18102\",\n                    \"departure_time\": 1746042960,\n                    \"is_cancelled\": false,\n                    \"is_real_time\": false,\n                    \"rt_trip_id\": \"284450769\",\n                    \"scheduled_departure_time\": 1746042960,\n                    \"trip_search_key\": \"STM:48373262:2:1:130\",\n                    \"wheelchair_accessible\": 1\n                  }\n                ],\n                \"global_route_id\": \"STM:863\",\n                \"internal_itinerary_id\": \"2:65535:false\"\n              },\n              \"rt_trip_id\": \"284450769\",\n              \"scheduled_departure_time\": 1746042120,\n              \"trip_search_key\": \"STM:48373262:2:1:130\",\n              \"wheelchair_accessible\": 1\n            },\n            {\n              \"departure_time\": 1746042300,\n              \"is_cancelled\": false,\n              \"is_real_time\": false,\n              \"plan_details\": {\n                \"arrival_schedule_item\": {\n                  \"departure_time\": 1746043140,\n                  \"is_cancelled\": false,\n                  \"is_real_time\": false,\n                  \"rt_trip_id\": \"284450823\",\n                  \"scheduled_departure_time\": 1746043140,\n                  \"trip_search_key\": \"STM:48373262:2:1:131\",\n                  \"wheelchair_accessible\": 1\n                },\n                \"stop_schedule_items\": [\n                  {\n                    \"global_stop_id\": \"STM:17989\",\n                    \"departure_time\": 1746042300,\n                    \"is_cancelled\": false,\n                    \"is_real_time\": false,\n                    \"rt_trip_id\": \"284450823\",\n                    \"scheduled_departure_time\": 1746042300,\n                    \"trip_search_key\": \"STM:48373262:2:1:131\",\n                    \"wheelchair_accessible\": 1\n                  },\n                  {\n                    \"global_stop_id\": \"STM:18045\",\n                    \"departure_time\": 1746042540,\n                    \"is_cancelled\": false,\n                    \"is_real_time\": false,\n                    \"rt_trip_id\": \"284450823\",\n                    \"scheduled_departure_time\": 1746042540,\n                    \"trip_search_key\": \"STM:48373262:2:1:131\",\n                    \"wheelchair_accessible\": 1\n                  },\n                  {\n                    \"global_stop_id\": \"STM:18102\",\n                    \"departure_time\": 1746043140,\n                    \"is_cancelled\": false,\n                    \"is_real_time\": false,\n                    \"rt_trip_id\": \"284450823\",\n                    \"scheduled_departure_time\": 1746043140,\n                    \"trip_search_key\": \"STM:48373262:2:1:131\",\n                    \"wheelchair_accessible\": 1\n                  }\n                ],\n                \"global_route_id\": \"STM:863\",\n                \"internal_itinerary_id\": \"2:65535:false\"\n              },\n              \"rt_trip_id\": \"284450823\",\n              \"scheduled_departure_time\": 1746042300,\n              \"trip_search_key\": \"STM:48373262:2:1:131\",\n              \"wheelchair_accessible\": 1\n            }\n          ],\n          \"duration\": 840,\n          \"end_time\": 1746042720,\n          \"leg_mode\": \"transit\",\n          \"start_time\": 1746041880,\n          \"routes\": [\n            {\n              \"compact_display_short_name\": {\n                \"boxed_text\": \"\",\n                \"elements\": [\n                  \"stm-metro-2\",\n                  \"\",\n                  null\n                ],\n                \"route_name_redundancy\": false\n              },\n              \"fares\": [],\n              \"global_route_id\": \"STM:863\",\n              \"itineraries\": [\n                {\n                  \"branch_code\": \"\",\n                  \"canonical_itinerary\": true,\n                  \"direction_headsign\": \"Côte-Vertu\",\n                  \"direction_id\": 0,\n                  \"headsign\": \"Côte-Vertu\",\n                  \"is_active\": true,\n                  \"merged_headsign\": \"Côte-Vertu\",\n                  \"plan_details\": {\n                    \"end_stop_offset\": 17,\n                    \"internal_itinerary_id\": \"2:65535:false\",\n                    \"plan_shape\": \"ek}tGluh`MJ_Apn@ocBfA}DtAeG^oCn@sDb@eBdP{d@j@kA|BaEvtAgzDp@}A^g@\\\\Mb@Gb@Fh@Tv{@pq@lVzW^b@\",\n                    \"start_stop_offset\": 7\n                  },\n                  \"shape\": \"sbauGz{}`MsDyJ_AcDQoAmGglAaAegCFsAp@sG\\\\gAtBeEdP{X`F{Rt@wMJaGZ{F|@_F~@sDdMa[Tu@foAwxGxDiZpn@ocBfA}DtAeG^oCn@sDb@eBdP{d@j@kA|BaEvtAgzDp@}A^g@\\\\Mb@Gb@Fh@Tv{@pq@lVzWne@jl@|CvC~Az@pIhElCbAbAT~@PfBBpGKbBJnCf@`Bt@fAbA~@lA`ArCh@rAbBfDlDvFpA`BfLtIfAfAjBjCfAlBf@rArClKH`AFjACbDUlFQ|Ag@jBcDpHk@fB[`CM|BCtCLbBZdBx@|B~@jBjJpLzDlHhA~C~CnMPlB?TQxAo|@~lCYf@m@Ru@?m\\\\qIgAEc@Ha@X_@t@k^|fAsFvNc@`DPpBp@|C|@|BdHzNj@jCPjDI~Ho@bFgDbK{`@ju@}CpDwl@h`Amb@n}@\",\n                  \"stops\": [\n                    {\n                      \"global_stop_id\": \"STM:87803\",\n                      \"location_type\": 0,\n                      \"route_type\": 1,\n                      \"rt_stop_id\": \"68\",\n                      \"stop_code\": \"10288\",\n                      \"stop_lat\": 45.55843505244717,\n                      \"stop_lon\": -73.72245899228142,\n                      \"stop_name\": \"Montmorency\",\n                      \"wheelchair_boarding\": 1\n                    },\n                    {\n                      \"global_stop_id\": \"STM:87790\",\n                      \"location_type\": 0,\n                      \"route_type\": 1,\n                      \"rt_stop_id\": \"9999112\",\n                      \"stop_code\": \"10146\",\n                      \"stop_lat\": 45.51521371712338,\n                      \"stop_lon\": -73.56104897846714,\n                      \"stop_name\": \"Berri-UQAM\",\n                      \"wheelchair_boarding\": 1\n                    },\n                    {\n                      \"global_stop_id\": \"STM:87783\",\n                      \"location_type\": 0,\n                      \"route_type\": 1,\n                      \"rt_stop_id\": \"36\",\n                      \"stop_code\": \"10132\",\n                      \"stop_lat\": 45.48250543652151,\n                      \"stop_lon\": -73.58017752200308,\n                      \"stop_name\": \"Lionel-Groulx\",\n                      \"wheelchair_boarding\": 1\n                    },\n                    {\n                      \"global_stop_id\": \"STM:87773\",\n                      \"location_type\": 0,\n                      \"route_type\": 1,\n                      \"rt_stop_id\": \"65\",\n                      \"stop_code\": \"10222\",\n                      \"stop_lat\": 45.51423345795769,\n                      \"stop_lon\": -73.6827539994694,\n                      \"stop_name\": \"Côte-Vertu\",\n                      \"wheelchair_boarding\": 1\n                    }\n                  ]\n                }\n              ],\n              \"mode_name\": \"Métro\",\n              \"real_time_route_id\": \"2\",\n              \"route_color\": \"f37d00\",\n              \"route_display_short_name\": {\n                \"boxed_text\": \"\",\n                \"elements\": [\n                  \"stm-metro\",\n                  \"\",\n                  \"stm-metro-2\"\n                ],\n                \"route_name_redundancy\": false\n              },\n              \"route_image\": \"stm-metro-2\",\n              \"route_long_name\": \"Ligne 2 - Orange\",\n              \"route_network_id\": \"STM|Montréal\",\n              \"route_network_name\": \"STM\",\n              \"route_short_name\": \"2\",\n              \"route_text_color\": \"ffffff\",\n              \"route_type\": 1,\n              \"sorting_key\": \"2\",\n              \"tts_long_name\": \"Côte-Vertu - Montmorency\",\n              \"tts_short_name\": \"ligne 2, orange\",\n              \"vehicle\": {\n                \"image\": \"vehicle-rail-mpm10\",\n                \"name\": \"métro\",\n                \"name_inflection\": \"m\"\n              }\n            }\n          ]\n        },\n        {\n          \"distance\": 293.6093402468491,\n          \"duration\": 347,\n          \"end_time\": 1746043067,\n          \"leg_mode\": \"walk\",\n          \"polyline\": \"ejutGpr_`MFcA@BBEHU??BGDK??b@cA??DODO??H[??B???JWDOBG???A??dByE??@A??FOJ[??CG_@_@??ECCC??CC\",\n          \"start_time\": 1746042720\n        }\n      ],\n      \"start_time\": 1746041550\n    },\n    {\n      \"accessibility\": \"None\",\n      \"duration\": 3402,\n      \"end_time\": 1746045228,\n      \"legs\": [\n        {\n          \"distance\": 849.7729938846024,\n          \"duration\": 714,\n          \"end_time\": 1746042540,\n          \"leg_mode\": \"walk\",\n          \"polyline\": \"og}tGzch`MRi@@A??n@j@??DBBB??n@p@??BC??FHHF??@B??r@l@??@BB@??|@z@??B???B@JHJLBB???B??~@t@??BDBB??\\\\n@D^??@@??FRFT???@??H@f@r@??@???FF??FO??HFdA~@FFHFnAjAFF??FDpAlAJFHJZXv@r@JJ??LJr@p@r@n@JJ??`@iA??HHp@j@??p@n@??EJ??JHHJ???B??CH\",\n          \"start_time\": 1746041826\n        },\n        {\n          \"departures\": [\n            {\n              \"departure_time\": 1746042540,\n              \"is_cancelled\": false,\n              \"is_real_time\": false,\n              \"plan_details\": {\n                \"arrival_schedule_item\": {\n                  \"departure_time\": 1746044220,\n                  \"is_cancelled\": false,\n                  \"is_real_time\": false,\n                  \"rt_trip_id\": \"285002179\",\n                  \"scheduled_departure_time\": 1746044220,\n                  \"trip_search_key\": \"SANDBOX:48261170:3:14:40\",\n                  \"wheelchair_accessible\": 2\n                },\n                \"global_route_id\": \"SANDBOX:242447\",\n                \"internal_itinerary_id\": \"3:65535:false\"\n              },\n              \"rt_trip_id\": \"285002179\",\n              \"scheduled_departure_time\": 1746042540,\n              \"trip_search_key\": \"SANDBOX:48261170:3:14:40\",\n              \"wheelchair_accessible\": 2\n            },\n            {\n              \"departure_time\": 1746043500,\n              \"is_cancelled\": false,\n              \"is_real_time\": false,\n              \"plan_details\": {\n                \"arrival_schedule_item\": {\n                  \"departure_time\": 1746045240,\n                  \"is_cancelled\": false,\n                  \"is_real_time\": false,\n                  \"rt_trip_id\": \"284738744\",\n                  \"scheduled_departure_time\": 1746045240,\n                  \"trip_search_key\": \"SANDBOX:48261170:3:14:41\",\n                  \"wheelchair_accessible\": 1\n                },\n                \"global_route_id\": \"SANDBOX:242447\",\n                \"internal_itinerary_id\": \"3:65535:false\"\n              },\n              \"rt_trip_id\": \"284738744\",\n              \"scheduled_departure_time\": 1746043500,\n              \"trip_search_key\": \"SANDBOX:48261170:3:14:41\",\n              \"wheelchair_accessible\": 1\n            },\n            {\n              \"departure_time\": 1746044400,\n              \"is_cancelled\": false,\n              \"is_real_time\": false,\n              \"plan_details\": {\n                \"arrival_schedule_item\": {\n                  \"departure_time\": 1746046140,\n                  \"is_cancelled\": false,\n                  \"is_real_time\": false,\n                  \"rt_trip_id\": \"284740835\",\n                  \"scheduled_departure_time\": 1746046140,\n                  \"trip_search_key\": \"SANDBOX:48261170:3:14:42\",\n                  \"wheelchair_accessible\": 1\n                },\n                \"global_route_id\": \"SANDBOX:242447\",\n                \"internal_itinerary_id\": \"3:65535:false\"\n              },\n              \"rt_trip_id\": \"284740835\",\n              \"scheduled_departure_time\": 1746044400,\n              \"trip_search_key\": \"SANDBOX:48261170:3:14:42\",\n              \"wheelchair_accessible\": 1\n            }\n          ],\n          \"duration\": 1680,\n          \"end_time\": 1746044220,\n          \"leg_mode\": \"transit\",\n          \"start_time\": 1746042540,\n          \"routes\": [\n            {\n              \"compact_display_short_name\": {\n                \"boxed_text\": \"\",\n                \"elements\": [\n                  null,\n                  \"TDSN\",\n                  null\n                ],\n                \"route_name_redundancy\": false\n              },\n              \"fares\": [],\n              \"global_route_id\": \"SANDBOX:242447\",\n              \"itineraries\": [\n                {\n                  \"branch_code\": \"\",\n                  \"canonical_itinerary\": true,\n                  \"direction_headsign\": \"Sud\",\n                  \"direction_id\": 1,\n                  \"headsign\": \"Sud\",\n                  \"is_active\": true,\n                  \"merged_headsign\": \"Sud\",\n                  \"plan_details\": {\n                    \"end_stop_offset\": 44,\n                    \"internal_itinerary_id\": \"3:65535:false\",\n                    \"plan_shape\": \"yb|tGrci`M@CHc@jAqCfMo_@|AaEf@yAfC_FnJoOLKtLs\\\\nMk_@bFmMtDyKlGiQ`Lq\\\\tLy\\\\`DiJn@gBhAiDpG_Rj@cBb@kBhAwC|AkE^gAhBcFR_AjAgDxI{UDWx@eCnAaDHc@bAcCpAwD\",\n                    \"start_stop_offset\": 22\n                  },\n                  \"shape\": \"wy`uGhhs`MqAdHjC|Cb@rApApAhCbBH?`DwPrCfApInDlIdEHErCsMbJid@nD{P|CuOrIed@tDiRvCcPVw@Po@vBuKPk@BIbAm@LOHEPMJUDc@Bo@Ci@q@eD?QF_@jBkJp@}DrDcRvDeRzBaM~E{VnD_RbAyE`AaDHk@hDgJjB|ALCzFiPHc@jAqCfMo_@|AaEf@yAfC_FnJoOLKtLs\\\\nMk_@bFmMtDyKlGiQ`Lq\\\\tLy\\\\`DiJn@gBhAiDpG_Rj@cBb@kBhAwC|AkE^gAhBcFR_AjAgDxI{UDWx@eCnAaDHc@bAcCnDkK|@kAZ{@JK?MBGd@}BFWwFiEKFm@lB\",\n                  \"stops\": [\n                    {\n                      \"global_stop_id\": \"SANDBOX:7483\",\n                      \"location_type\": 0,\n                      \"route_type\": 3,\n                      \"rt_stop_id\": \"50314\",\n                      \"stop_code\": \"50314\",\n                      \"stop_lat\": 45.55695117389361,\n                      \"stop_lon\": -73.66803212557738,\n                      \"stop_name\": \"Millen / Henri-Bourassa\",\n                      \"wheelchair_boarding\": 1\n                    },\n                    {\n                      \"global_stop_id\": \"SANDBOX:7484\",\n                      \"location_type\": 0,\n                      \"route_type\": 3,\n                      \"rt_stop_id\": \"50301\",\n                      \"stop_code\": \"50301\",\n                      \"stop_lat\": 45.55390247795629,\n                      \"stop_lon\": -73.66914728279339,\n                      \"stop_name\": \"Station Henri-Bourassa\",\n                      \"wheelchair_boarding\": 1\n                    }\n                  ]\n                }\n              ],\n              \"mode_name\": \"Mode name\",\n              \"real_time_route_id\": \"55\",\n              \"route_color\": \"781b7d\",\n              \"route_display_short_name\": {\n                \"boxed_text\": \"Saint-Laurent\",\n                \"elements\": [\n                  \"mla-g\",\n                  \"55\",\n                  \"mla-d\"\n                ],\n                \"route_name_redundancy\": false\n              },\n              \"route_image\": \"stm-metro\",\n              \"route_long_name\": \"Station Pl.-des-Arts <​> Bureau <​> Station de Castelnau\",\n              \"route_network_id\": \"Network name (tGTFS fields)|Montréal\",\n              \"route_network_name\": \"Network name (tGTFS fields)\",\n              \"route_short_name\": \"55\",\n              \"route_text_color\": \"ffffff\",\n              \"route_type\": 3,\n              \"sorting_key\": \"55\",\n              \"tts_long_name\": \"Station Pl.-des-Arts <​> Bureau <​> Station de Castelnau\",\n              \"tts_short_name\": \"55\",\n              \"vehicle\": {\n                \"image\": \"cal-bus\",\n                \"name\": \"bus\",\n                \"name_inflection\": \"m\"\n              }\n            }\n          ]\n        },\n        {\n          \"distance\": 1202.10671170531,\n          \"duration\": 1008,\n          \"end_time\": 1746045228,\n          \"leg_mode\": \"walk\",\n          \"polyline\": \"g|vtGt`~_M`@kA??DBt@o@??VS??DE??fCrB??LL??DB??LJ??VPpA~@??FDHJHFHF??|AnAZV??LHLJ??l@j@??FDHH??lB|A??FDFD??nAdA??BC??PEHEHC??????h@`@??DBFDHJ??RL??DBDD??@@??zFlE??BBFD??RT??BEt@oAZi@??B???JNT\\\\HJ??BF??DG??D@VT??DDDH??rBnB??NJNP??RP^`@??@A??JLJF??JMJW??`@X???@??HHHH??@???PP\",\n          \"start_time\": 1746044220\n        }\n      ],\n      \"start_time\": 1746041826\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "8485a5a4-549e-4eb5-849f-1248de94f410",
+      "name": "/map layers/placemarks",
+      "request": {
+        "name": "/map layers/placemarks",
+        "description": {
+          "content": "Returns placemarks for a location. Placemarks include bikeshare system docks, scooters and other shared systems. ",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "map_layers",
+            "placemarks"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<double>",
+              "description": "(Required) Latitude"
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<double>",
+              "description": "(Required) Longitude"
+            },
+            {
+              "disabled": false,
+              "key": "distance",
+              "value": "100",
+              "description": "Distance in meters (as the bird flies). "
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "624a213f-b418-4de5-86ee-960ead32f61a",
+          "name": "A list of nearby placemarks",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "map_layers",
+                "placemarks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "45.526168"
+                },
+                {
+                  "key": "lon",
+                  "value": "-73.595061"
+                },
+                {
+                  "key": "distance",
+                  "value": "100"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"placemarks\": [\n    {\n      \"title\": \"Electric Scooter\",\n      \"id\": \"1104\",\n      \"networkName\": \"LINK\",\n      \"networkId\": 1023,\n      \"color\": \"E5FF01\",\n      \"textColor\": \"07000E\",\n      \"latitude\": 39.98675,\n      \"longitude\": -83.00978,\n      \"type\": \"scooter\"\n    },\n    {\n      \"title\": \"Electric Scooter\",\n      \"id\": \"1104\",\n      \"networkName\": \"LINK\",\n      \"networkId\": 1023,\n      \"color\": \"E5FF01\",\n      \"textColor\": \"07000E\",\n      \"latitude\": 39.98675,\n      \"longitude\": -83.00978,\n      \"type\": \"electric-scooter\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "78af74c7-fdc0-481b-b9f3-6b2c6b001468",
+          "name": "Unable to process location or distance",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "map_layers",
+                "placemarks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "45.526168"
+                },
+                {
+                  "key": "lon",
+                  "value": "-73.595061"
+                },
+                {
+                  "key": "distance",
+                  "value": "100"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        },
+        {
+          "id": "1404f14d-2459-4e8f-8672-b8099f5b093d",
+          "name": "No placemarks were found near the requested location",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "map_layers",
+                "placemarks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "45.526168"
+                },
+                {
+                  "key": "lon",
+                  "value": "-73.595061"
+                },
+                {
+                  "key": "distance",
+                  "value": "100"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Not Found",
+          "code": 404,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "6d16d358-62b2-4bf2-a80e-f5c943451b42",
+      "name": "/v4/public/available networks",
+      "request": {
+        "name": "/v4/public/available networks",
+        "description": {
+          "content": "List of networks available in the entire Transit system. For more information about networks, refer to the /public/stop_departures endpoint and the 'route_network_name'. Optionnaly, a lat/lon can be passed to filter networks to only the ones that support that coordinate. ",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v4",
+            "public",
+            "available_networks"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "Optional latitude, if provided in addition to `lon` the network returned will only include networks serving that location. "
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "Optional longitude, if provided in addition to `lat` the network returned will only include networks serving that location. "
+            },
+            {
+              "disabled": false,
+              "key": "country_code",
+              "value": "<string>",
+              "description": "Optional country code (ISO 3166-1 alpha-2 format, e.g., \"US\", \"CA\") to filter networks to only those available in the specified country."
+            },
+            {
+              "disabled": false,
+              "key": "include_all_networks",
+              "value": "false",
+              "description": "Include additional supported networks that are filtered out by default. For example, these may include school busses and previews of upcoming agency network redesigns."
+            },
+            {
+              "disabled": false,
+              "key": "locale",
+              "value": "<string>",
+              "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+            },
+            {
+              "disabled": false,
+              "key": "include_network_geometry",
+              "value": "true",
+              "description": "Include the network geometry in the response. True by default. "
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+            "key": "Accept-Language",
+            "value": "<string>"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "6be639e3-805b-4f2f-ab54-63d7782b5b17",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "available_networks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                },
+                {
+                  "key": "country_code",
+                  "value": "<string>"
+                },
+                {
+                  "key": "include_all_networks",
+                  "value": "false"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                },
+                {
+                  "key": "include_network_geometry",
+                  "value": "true"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"networks\": [\n    {\n      \"network_id\": \"BC Transit West Kootenay|West Kootenay\",\n      \"network_name\": \"BC Transit West Kootenay\",\n      \"network_location\": \"West Kootenay\",\n      \"network_in_beta\": true,\n      \"network_geometry\": {},\n      \"network_geometry_center\": {}\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "94ca3367-195b-45a1-af2a-eb0987663cd9",
+      "name": "/map layers/available networks",
+      "request": {
+        "name": "/map layers/available networks",
+        "description": {
+          "content": "List of sharing system networks available in the entire Transit system.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "map_layers",
+            "available_networks"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "f103f038-d0de-493e-8c1a-e6c77f2133c4",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "map_layers",
+                "available_networks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"networks\": [\n    {\n      \"network_geometry\": {},\n      \"network_id\": 2569,\n      \"network_name\": \"string\",\n      \"network_logo\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "8a216c49-2c05-400b-a120-f48034b14b96",
+      "name": "/v4/public/route details",
+      "request": {
+        "name": "/v4/public/route details",
+        "description": {
+          "content": "Get detailed information like shape and itineraries for a route",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v4",
+            "public",
+            "route_details"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "global_route_id",
+              "value": "<string>",
+              "description": "(Required) Global route id provided by other endpoint on which more detail is requested. "
+            },
+            {
+              "disabled": false,
+              "key": "locale",
+              "value": "<string>",
+              "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+            },
+            {
+              "disabled": false,
+              "key": "include_next_departure",
+              "value": "false",
+              "description": "If set to true, will make the stop list include the next departure for each stop. "
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+            "key": "Accept-Language",
+            "value": "<string>"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "dcc1db93-a52f-47c2-b13c-97d91a46fe35",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "route_details"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "global_route_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                },
+                {
+                  "key": "include_next_departure",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "null",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c3728c53-4276-4d8f-b5c5-ffc8db160b75",
+          "name": "Unknown route",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "route_details"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "global_route_id",
+                  "value": "<string>"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                },
+                {
+                  "key": "include_next_departure",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "97159891-9971-43d1-af12-ff461c32137e",
+      "name": "/v4/public/routes for networks",
+      "request": {
+        "name": "/v4/public/routes for networks",
+        "description": {
+          "content": "Return all the routes for a list of given networks.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v4",
+            "public",
+            "routes_for_networks"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "network_ids",
+              "value": "<string>",
+              "description": "List of comma seperated Network IDs provided from [`/public/available_networks`](#operation/get-public-available_networks)"
+            },
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "Any lat of a location that serves that network. If provided, the performance of this call will be improved. "
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "Any lon of a location that serves that network. If provided, the performance of this call will be improved. "
+            },
+            {
+              "disabled": false,
+              "key": "locale",
+              "value": "<string>",
+              "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+            },
+            {
+              "disabled": false,
+              "key": "include_itineraries",
+              "value": "<boolean>",
+              "description": "If set to true, the response will include itineraries detail for the listed routes. "
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+            "key": "Accept-Language",
+            "value": "<string>"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "dca53b87-970c-429c-9137-b0855214c05e",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "routes_for_networks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "network_ids",
+                  "value": "BC Transit West Kootenay|West Kootenay"
+                },
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                },
+                {
+                  "key": "include_itineraries",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "null",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "142dcf15-e44d-4b6f-9c9d-cee9849bef2c",
+          "name": "Unknown network",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "routes_for_networks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "network_ids",
+                  "value": "BC Transit West Kootenay|West Kootenay"
+                },
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                },
+                {
+                  "key": "include_itineraries",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "dfb21a4b-1fd3-48cc-ba19-7a11d1a96420",
+      "name": "/v4/public/stops for network",
+      "request": {
+        "name": "/v4/public/stops for network",
+        "description": {
+          "content": "Return all the stops for a given network.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v4",
+            "public",
+            "stops_for_network"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "network_id",
+              "value": "<string>",
+              "description": "Network ID or Network Location provided from [`/public/available_networks`](#operation/get-public-available_networks)"
+            },
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "Any lat of a location that serves that network. If provided, the performance of this call will be improved. "
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "Any lon of a location that serves that network. If provided, the performance of this call will be improved. "
+            },
+            {
+              "disabled": false,
+              "key": "locale",
+              "value": "<string>",
+              "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+            "key": "Accept-Language",
+            "value": "<string>"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "666172af-cf65-4dda-bb11-25a0f92d388e",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "stops_for_network"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "network_id",
+                  "value": "BC Transit West Kootenay|West Kootenay"
+                },
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"stops\": [\n    {\n      \"global_stop_id\": \"1:94380\",\n      \"location_type\": 0,\n      \"stop_lat\": 45.526168077787894,\n      \"stop_lon\": -73.59506067289408,\n      \"stop_name\": \"De Gaspé / Maguire\",\n      \"distance\": 45,\n      \"parent_station\": {\n        \"global_stop_id\": \"1:94380\",\n        \"location_type\": \"string\",\n        \"rt_stop_id\": \"string\",\n        \"station_code\": \"string\",\n        \"station_name\": \"string\"\n      },\n      \"route_type\": 3441,\n      \"stop_code\": \"51752\",\n      \"rt_stop_id\": \"51752\",\n      \"wheelchair_boarding\": 1\n    },\n    {\n      \"global_stop_id\": \"1:94380\",\n      \"location_type\": 0,\n      \"stop_lat\": 45.526168077787894,\n      \"stop_lon\": -73.59506067289408,\n      \"stop_name\": \"De Gaspé / Maguire\",\n      \"distance\": 45,\n      \"parent_station\": {\n        \"global_stop_id\": \"1:94380\",\n        \"location_type\": \"string\",\n        \"rt_stop_id\": \"string\",\n        \"station_code\": \"string\",\n        \"station_name\": \"string\"\n      },\n      \"route_type\": 5004,\n      \"stop_code\": \"51752\",\n      \"rt_stop_id\": \"51752\",\n      \"wheelchair_boarding\": 1\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "1ac74101-889a-4ca5-9fd1-2275a6bf0a6b",
+          "name": "Unknown network",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "stops_for_network"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "network_id",
+                  "value": "BC Transit West Kootenay|West Kootenay"
+                },
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "3e72b7d6-6747-46b3-8f91-1e466ec9761c",
+      "name": "/v4/public/alerts for networks",
+      "request": {
+        "name": "/v4/public/alerts for networks",
+        "description": {
+          "content": "Return all active service alerts affecting routes in the specified networks. Each alert includes detailed information about affected routes, stops, and trips.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v4",
+            "public",
+            "alerts_for_networks"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "network_ids",
+              "value": "<string>",
+              "description": "List of comma separated Network IDs provided from [`/public/available_networks`](#operation/get-public-available_networks)"
+            },
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "Any lat of a location that serves that network. If provided, the performance of this call will be improved."
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "Any lon of a location that serves that network. If provided, the performance of this call will be improved."
+            },
+            {
+              "disabled": false,
+              "key": "show_active_alerts_only",
+              "value": "false",
+              "description": "When true, only returns alerts whose active periods intersect with the current time. Alerts with no end time are considered active indefinitely."
+            },
+            {
+              "disabled": false,
+              "key": "locale",
+              "value": "<string>",
+              "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+            "key": "Accept-Language",
+            "value": "<string>"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "efbc5b98-0804-4185-a121-c05b9bf53610",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "alerts_for_networks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "network_ids",
+                  "value": "BC Transit West Kootenay|West Kootenay"
+                },
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                },
+                {
+                  "key": "show_active_alerts_only",
+                  "value": "false"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"alerts\": [\n    {\n      \"effect\": \"NO_SERVICE\",\n      \"cause\": \"TECHNICAL_PROBLEM\",\n      \"severity\": \"Severe\",\n      \"description\": \"Due to mechanical issues, service is suspended between Station A and Station B.\",\n      \"created_at\": 1639584000,\n      \"informed_entities\": [\n        {\n          \"global_route_id\": \"1|12345\",\n          \"global_stop_id\": \"1|67890\",\n          \"rt_trip_id\": \"trip_123\"\n        },\n        {\n          \"global_route_id\": \"1|12345\",\n          \"global_stop_id\": \"1|67890\",\n          \"rt_trip_id\": \"trip_123\"\n        }\n      ],\n      \"title\": \"Service disruption\",\n      \"active_periods\": [\n        {\n          \"start\": 1639584000,\n          \"end\": 1639670400\n        },\n        {\n          \"start\": 1639584000,\n          \"end\": 1639670400\n        }\n      ]\n    },\n    {\n      \"effect\": \"NO_SERVICE\",\n      \"cause\": \"TECHNICAL_PROBLEM\",\n      \"severity\": \"Severe\",\n      \"description\": \"Due to mechanical issues, service is suspended between Station A and Station B.\",\n      \"created_at\": 1639584000,\n      \"informed_entities\": [\n        {\n          \"global_route_id\": \"1|12345\",\n          \"global_stop_id\": \"1|67890\",\n          \"rt_trip_id\": \"trip_123\"\n        },\n        {\n          \"global_route_id\": \"1|12345\",\n          \"global_stop_id\": \"1|67890\",\n          \"rt_trip_id\": \"trip_123\"\n        }\n      ],\n      \"title\": \"Service disruption\",\n      \"active_periods\": [\n        {\n          \"start\": 1639584000,\n          \"end\": 1639670400\n        },\n        {\n          \"start\": 1639584000,\n          \"end\": 1639670400\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "a9b773d5-866a-4264-8d81-a43160ee77bf",
+          "name": "Unknown network",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "alerts_for_networks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "network_ids",
+                  "value": "BC Transit West Kootenay|West Kootenay"
+                },
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                },
+                {
+                  "key": "show_active_alerts_only",
+                  "value": "false"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "3a049610-2c47-46a7-a583-90e463e0da09",
+      "name": "/v4/public/latest update for network",
+      "request": {
+        "name": "/v4/public/latest update for network",
+        "description": {
+          "content": "Return the time of the most recent data update for a given network ID or network location",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v4",
+            "public",
+            "latest_update_for_network"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "network_id",
+              "value": "<string>",
+              "description": "Network ID or Network Location provided from [`/public/available_networks`](#operation/get-public-available_networks)"
+            },
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "Any lat of a location that serves that network. If provided, the performance of this call will be improved. "
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "Any lon of a location that serves that network. If provided, the performance of this call will be improved. "
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "7315c937-2ffe-4638-be70-c2d9d5164b6e",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "latest_update_for_network"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "network_id",
+                  "value": "BC Transit West Kootenay|West Kootenay"
+                },
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"time\": 7546\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "0b71de1a-b5f6-4686-8d3d-e176a465a14a",
+          "name": "Unknown network",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "latest_update_for_network"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "network_id",
+                  "value": "BC Transit West Kootenay|West Kootenay"
+                },
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "ce02117b-7e33-48f5-beea-aefdff7cbf75",
+      "name": "/v4/public/search stops",
+      "request": {
+        "name": "/v4/public/search stops",
+        "description": {
+          "content": "Given coordinates of an approximate area to search, find transit stops whose names or stop codes match the given search term, from feeds which serve the search area.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v4",
+            "public",
+            "search_stops"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "lat",
+              "value": "<number>",
+              "description": "Latitude of the approximate area of the search."
+            },
+            {
+              "disabled": false,
+              "key": "lon",
+              "value": "<number>",
+              "description": "Longitude of the approximate area of the search."
+            },
+            {
+              "disabled": false,
+              "key": "query",
+              "value": "<string>",
+              "description": "Search term. Will be matched against the `stop_name` and `stop_code` of potential stops from the [GTFS](https://github.com/google/transit/blob/master/gtfs/spec/en/reference.md#stopstxt)."
+            },
+            {
+              "disabled": false,
+              "key": "pickup_dropoff_filter",
+              "value": "<string>",
+              "description": "For routable stops, futher filter based on whether a rider can embark or disembark at this stop.\n* `PickupAllowedOnly`: Riders can board at this stop on at least one trip.\n* `DropoffAllowedOnly`: Riders can exit at this stop on at least one trip.\n* `Everything`: All stops.\n\nFor further reference, see the [GTFS pickup_type and drop_off_type fields](https://developers.google.com/transit/gtfs/reference#stop_timestxt).'\n"
+            },
+            {
+              "disabled": false,
+              "key": "max_num_results",
+              "value": "<integer>",
+              "description": "Maximum number of results to return. If there are few matches, less results than requested will be returned."
+            },
+            {
+              "disabled": false,
+              "key": "max_distance",
+              "value": "<integer>",
+              "description": "Optional maximum distance in meters from the search coordinates (lat, lon) to filter results. Only stops within this distance will be returned. If not provided, no distance filtering is applied."
+            },
+            {
+              "disabled": false,
+              "key": "locale",
+              "value": "<string>",
+              "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+            "key": "Accept-Language",
+            "value": "<string>"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "9b18e969-102b-499d-b6da-bef4e910114d",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "search_stops"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                },
+                {
+                  "key": "query",
+                  "value": "<string>"
+                },
+                {
+                  "key": "pickup_dropoff_filter",
+                  "value": "<string>"
+                },
+                {
+                  "key": "max_num_results",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "max_distance",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"results\": [\n    {\n      \"global_stop_id\": \"1:94380\",\n      \"location_type\": \"0\",\n      \"match_strength\": 0.9293769668892413,\n      \"route_type\": \"string\",\n      \"stop_lat\": 2305.866436857611,\n      \"stop_lon\": 0,\n      \"stop_name\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "4b63f163-cdc5-4f6d-8eda-a6be57dc1a85",
+          "name": "lat, lon or query are missing",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "search_stops"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "<number>"
+                },
+                {
+                  "key": "lon",
+                  "value": "<number>"
+                },
+                {
+                  "key": "query",
+                  "value": "<string>"
+                },
+                {
+                  "key": "pickup_dropoff_filter",
+                  "value": "<string>"
+                },
+                {
+                  "key": "max_num_results",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "max_distance",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "fa50cd1e-7d80-4a92-a206-f0256c71481d",
+      "name": "/v4/public/trip details",
+      "request": {
+        "name": "/v4/public/trip details",
+        "description": {
+          "content": "Provides scheduled times and stop information for an entire trip",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v4",
+            "public",
+            "trip_details"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "trip_search_key",
+              "value": "<string>",
+              "description": "(Required) A trip identifier obtained from other endpoints like `/v3/public/stop_departures`. This value will frequently change as feeds are updated and should be refetched regularly before use in further requests."
+            },
+            {
+              "disabled": false,
+              "key": "locale",
+              "value": "<string>",
+              "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. If the locale parameter is not provided, the Accept-Language header will be used as a fallback."
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+            "key": "Accept-Language",
+            "value": "<string>"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "a34aecd9-edf6-4ba4-9330-527f707a8e38",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "public",
+                "trip_details"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "trip_search_key",
+                  "value": "<string>"
+                },
+                {
+                  "key": "locale",
+                  "value": "fr,en"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "disabled": false,
+                "description": "Names and other strings can translated into any of the supported languages of a feed. If not provided, the default language of the feed is selected. This header is used as a fallback when the locale query parameter is not specified.",
+                "key": "Accept-Language",
+                "value": "fr,en"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"route\": {\n    \"compact_display_short_name\": {\n      \"boxed_text\": \"string\",\n      \"elements\": [\n        \"string\",\n        \"string\",\n        \"string\"\n      ],\n      \"route_name_redundancy\": \"boolean\"\n    },\n    \"fares\": [\n      {\n        \"fare_media_type\": \"number\",\n        \"price_min\": {\n          \"currency_code\": \"string\",\n          \"symbol\": \"string\",\n          \"text\": \"string\",\n          \"value\": \"string\"\n        },\n        \"price_max\": {\n          \"currency_code\": \"string\",\n          \"symbol\": \"string\",\n          \"text\": \"string\",\n          \"value\": \"string\"\n        }\n      }\n    ],\n    \"global_route_id\": \"string\",\n    \"real_time_route_id\": \"string\",\n    \"route_color\": \"string\",\n    \"route_display_short_name\": {\n      \"boxed_text\": \"string\",\n      \"elements\": [\n        \"string\",\n        \"string\",\n        \"string\"\n      ],\n      \"route_name_redundancy\": \"boolean\"\n    },\n    \"route_long_name\": \"string\",\n    \"route_short_name\": \"string\",\n    \"route_text_color\": \"string\",\n    \"route_type\": 0,\n    \"sorting_key\": \"string\",\n    \"tts_long_name\": \"string\",\n    \"tts_short_name\": \"string\"\n  },\n  \"rt_trip_id\": \"string\",\n  \"schedule_items\": [\n    {\n      \"departure_time\": 0,\n      \"stop\": {\n        \"global_stop_id\": \"string\",\n        \"location_type\": 0,\n        \"route_type\": 0,\n        \"rt_stop_id\": \"string\",\n        \"stop_code\": \"string\",\n        \"stop_lat\": 0,\n        \"stop_lon\": 0,\n        \"stop_name\": \"string\",\n        \"wheelchair_boarding\": 0\n      }\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "934c867d-ddfe-4542-b68f-3c48d3da4d53",
+      "name": "/v4/vehicles",
+      "request": {
+        "name": "/v4/vehicles",
+        "description": {
+          "content": "Returns real-time vehicle positions for a given route",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v4",
+            "vehicles"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "global_route_id",
+              "value": "<string>",
+              "description": "(Required) Global route ID to get vehicles for"
+            },
+            {
+              "disabled": false,
+              "key": "direction_id",
+              "value": "<integer>",
+              "description": "Optional direction ID to filter vehicles by direction"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "14b61d3e-75dc-4a9c-b691-c54158dedfef",
+          "name": "List of vehicles for the route",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "vehicles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "global_route_id",
+                  "value": "STM:884"
+                },
+                {
+                  "key": "direction_id",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"vehicles\": [\n    {\n      \"vehicle_id\": \"STM:980:1|29088\",\n      \"latitude\": 45.51379,\n      \"longitude\": -73.683243,\n      \"direction_id\": 0,\n      \"updated_at\": 1764097776,\n      \"vehicle_label\": \"29-088\",\n      \"occupancy_status\": 1,\n      \"wheelchair_accessible\": 1,\n      \"external_vehicle_id\": \"29088\",\n      \"rt_trip_id\": \"292679910\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "208444ca-dd2b-4266-9f98-1b7e8c5be88b",
+          "name": "Missing or invalid global_route_id parameter",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v4",
+                "vehicles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "global_route_id",
+                  "value": "STM:884"
+                },
+                {
+                  "key": "direction_id",
+                  "value": "0"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "apiKey",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://external.transitapp.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "apiKey"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "fcc8736d-9108-4198-b067-51417cbb6237",
+    "name": "Transit API (Stable)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "**📌 You are viewing v4 (Stable). View the legacy [v3 API here](v3.html).**\n\nAPI provided by data from [transit.app](https://transit.app). Request an API key [here](https://https://transitapp.com/partners/apis).\n",
+      "type": "text/plain"
+    }
+  }
+}
