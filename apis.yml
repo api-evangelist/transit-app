@@ -74,7 +74,7 @@ apis:
         url: https://api-doc.transitapp.com/v4.html
       - type: Documentation
         url: https://api-doc.transitapp.com/
-      - type: SignUp
+      - type: Signup
         url: https://transitapp.com/apis
       - type: OpenAPI
         url: openapi/transit-openapi.yml
@@ -127,13 +127,13 @@ common:
     url: https://twitter.com/transitapp
   - type: LinkedIn
     url: https://www.linkedin.com/company/transit-app
-  - type: Tool
+  - type: Tools
     url: https://github.com/transitapp/gtfs-flex-to-GOFS
     name: GTFS-Flex to GOFS Converter
-  - type: Tool
+  - type: Tools
     url: https://github.com/transitapp/gtfs-blocks-to-transfers
     name: GTFS Blocks to Transfers
-  - type: Tool
+  - type: Tools
     url: https://github.com/transitapp/py-gtfs-loader
     name: py-gtfs-loader
   - type: Sample
