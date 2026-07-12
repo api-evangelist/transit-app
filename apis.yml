@@ -79,6 +79,10 @@ apis:
       - type: OpenAPI
         url: openapi/transit-openapi.yml
 common:
+  - type: DomainSecurity
+    url: security/transit-app-domain-security.yml
+  - type: Authentication
+    url: authentication/transit-app-authentication.yml
   - type: Website
     url: https://transitapp.com
   - type: Portal
