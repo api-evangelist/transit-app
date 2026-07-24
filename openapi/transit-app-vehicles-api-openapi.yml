@@ -1,0 +1,148 @@
+openapi: 3.1.0
+info:
+  title: Transit API (Stable) Map Layers Vehicles API
+  version: 4.0.0
+  x-logo:
+    url: transit-logotype_iOS-dark.png
+  contact: {}
+  description: '**📌 You are viewing v4 (Stable). View the legacy [v3 API here](v3.html).**
+
+
+    API provided by data from [transit.app](https://transit.app). Request an API key [here](https://https://transitapp.com/partners/apis).
+
+    '
+servers:
+- url: https://external.transitapp.com
+  description: ''
+  variables: {}
+  x-last-modified: 1614306184264
+security:
+- apiKey: []
+tags:
+- name: Vehicles
+paths:
+  /v4/vehicles:
+    get:
+      operationId: /v4/vehicles
+      description: Returns real-time vehicle positions for a given route
+      parameters:
+      - in: query
+        name: global_route_id
+        required: true
+        description: Global route ID to get vehicles for
+        schema:
+          type: string
+          example: STM:884
+      - in: query
+        name: direction_id
+        required: false
+        description: Optional direction ID to filter vehicles by direction
+        schema:
+          type: integer
+          enum:
+          - 0
+          - 1
+          example: 0
+      responses:
+        '200':
+          description: List of vehicles for the route
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  vehicles:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        vehicle_id:
+                          type: string
+                          description: Unique internal identifier for the vehicle, combining feed_code, global route id, and internal vehicle id
+                          example: STM:980:1|29088
+                        latitude:
+                          type: number
+                          format: float
+                          description: Latitude of the vehicle
+                          example: 45.51379
+                        longitude:
+                          type: number
+                          format: float
+                          description: Longitude of the vehicle
+                          example: -73.683243
+                        direction_id:
+                          type: integer
+                          enum:
+                          - 0
+                          - 1
+                          description: Direction of travel for this vehicle. 0 = Outbound, 1 = Inbound
+                          example: 0
+                        updated_at:
+                          type: integer
+                          description: Unix timestamp of when the vehicle position was last updated
+                          example: 1764097776
+                        vehicle_label:
+                          type: string
+                          nullable: true
+                          description: Vehicle identifier as provided by the operator. May be null.
+                          example: 29-088
+                        occupancy_status:
+                          type: integer
+                          nullable: true
+                          enum:
+                          - 1
+                          - 2
+                          - 3
+                          description: Occupancy status of the vehicle. May be null if unavailable. 1 = Not crowded, 2 = Some crowding, 3 = Crowded
+                          example: 1
+                        wheelchair_accessible:
+                          type: integer
+                          nullable: true
+                          enum:
+                          - 0
+                          - 1
+                          - 2
+                          description: 'Whether the vehicle is accessible. May be null if unavailable. Note: this only reflects real-time data for the specific vehicle. Routes with unknown values may be accessible if defined in static data. 0 = Unknown, 1 = Available (accessible), 2 = NotAvailable (inaccessible)'
+                          example: 1
+                        external_vehicle_id:
+                          type: string
+                          nullable: true
+                          description: External vehicle identifier from the transit operator. May be null.
+                          example: '29088'
+                        rt_trip_id:
+                          type: string
+                          nullable: true
+                          description: Real-time trip identifier. May be null. If multiple trip IDs are assigned, returns the first one.
+                          example: '292679910'
+                      required:
+                      - vehicle_id
+                      - latitude
+                      - longitude
+                      - direction_id
+                      - updated_at
+                required:
+                - vehicles
+              examples:
+                Example 1:
+                  value:
+                    vehicles:
+                    - vehicle_id: STM:980:1|29088
+                      latitude: 45.51379
+                      longitude: -73.683243
+                      direction_id: 0
+                      updated_at: 1764097776
+                      vehicle_label: 29-088
+                      occupancy_status: 1
+                      wheelchair_accessible: 1
+                      external_vehicle_id: '29088'
+                      rt_trip_id: '292679910'
+        '400':
+          description: Missing or invalid global_route_id parameter
+      tags:
+      - Vehicles
+components:
+  securitySchemes:
+    apiKey:
+      name: apiKey
+      type: apiKey
+      in: header

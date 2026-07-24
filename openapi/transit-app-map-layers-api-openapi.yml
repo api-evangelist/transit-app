@@ -1,0 +1,214 @@
+openapi: 3.1.0
+info:
+  title: Transit API (Stable) Map Layers API
+  version: 4.0.0
+  x-logo:
+    url: transit-logotype_iOS-dark.png
+  contact: {}
+  description: '**📌 You are viewing v4 (Stable). View the legacy [v3 API here](v3.html).**
+
+
+    API provided by data from [transit.app](https://transit.app). Request an API key [here](https://https://transitapp.com/partners/apis).
+
+    '
+servers:
+- url: https://external.transitapp.com
+  description: ''
+  variables: {}
+  x-last-modified: 1614306184264
+security:
+- apiKey: []
+tags:
+- name: Map Layers
+paths:
+  /map_layers/placemarks:
+    x-last-modified: 1614306198911
+    parameters: []
+    get:
+      parameters:
+      - $ref: '#/components/parameters/Latitude'
+      - $ref: '#/components/parameters/Longitude'
+      - name: distance
+        description: 'Distance in meters (as the bird flies). '
+        schema:
+          format: int32
+          default: 100
+          type: integer
+          maximum: 2000
+        in: query
+        required: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  placemarks:
+                    type: array
+                    items:
+                      anyOf:
+                      - $ref: '#/components/schemas/FloatingPlacemark'
+                      - $ref: '#/components/schemas/StationPlacemark'
+          description: A list of nearby placemarks
+          x-last-modified: 1614306473111
+        '400':
+          description: Unable to process location or distance
+        '404':
+          description: No placemarks were found near the requested location
+      operationId: /map_layers/placemarks
+      description: 'Returns placemarks for a location. Placemarks include bikeshare system docks, scooters and other shared systems. '
+      tags:
+      - Map Layers
+  /map_layers/available_networks:
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  networks:
+                    type: array
+                    uniqueItems: true
+                    minItems: 1
+                    items:
+                      type: object
+                      properties:
+                        network_geometry:
+                          type: object
+                          description: GeoJSON (of type Polygon) representing the service provided by the network.
+                        network_id:
+                          type: integer
+                          description: Identifier of the network.
+                        network_name:
+                          type: string
+                          minLength: 1
+                          description: Name of the network.
+                        network_logo:
+                          type: string
+                          x-stoplight:
+                            id: fyxuruvlvff5b
+                          description: An image slug for the network. More information about getting images from the slug can be found in the DisplayShortName description.
+      operationId: /map_layers/available_networks
+      description: List of sharing system networks available in the entire Transit system.
+      parameters: []
+      tags:
+      - Map Layers
+components:
+  parameters:
+    Latitude:
+      name: lat
+      in: query
+      required: true
+      schema:
+        type: number
+        format: double
+        example: 45.526168
+      description: Latitude
+    Longitude:
+      name: lon
+      in: query
+      required: true
+      schema:
+        type: number
+        format: double
+        example: -73.595061
+      description: Longitude
+  schemas:
+    FloatingPlacemark:
+      type: object
+      properties:
+        title:
+          description: Human readable description of the vehicle
+          type: string
+          example: Electric Scooter
+        id:
+          description: External identifier from micromobility data provider
+          type: string
+          example: '1104'
+        networkName:
+          description: Name of the operator of the network (ie Lyft, CoGo)
+          type: string
+          example: LINK
+        networkId:
+          description: Unique identifier for the network (ie Lyft in Los Angeles, CoGo in Columbus)
+          type: number
+          example: 1023
+        color:
+          description: 'Main brand color of the network in hex format (no leading #)'
+          type: string
+          example: E5FF01
+        textColor:
+          description: 'Contrasting color for use over the brand color in hex format (no leading #)'
+          type: string
+          example: 07000E
+        latitude:
+          type: number
+          description: Latitude of the vehicle
+          example: 39.98675
+          format: double
+        longitude:
+          type: number
+          description: Longitude of the vehicle
+          example: -83.00978
+          format: double
+        type:
+          $ref: '#/components/schemas/VehicleType'
+    StationPlacemark:
+      type: object
+      properties:
+        title:
+          description: Description of the location of the docking station (ie High St / Warren)
+          type: string
+        subtitle:
+          description: Human readable description of vehicles available
+          type: string
+          example: 4 bikes - 1 ebikes - 11 docks
+        id:
+          description: External identifier from micromobility data provider
+          type: string
+          example: '23'
+        networkName:
+          description: Name of the operator of the network
+          type: string
+          example: CoGo
+        networkId:
+          description: Unique identifier for the network (ie Lyft in Los Angeles, CoGo in Columbus)
+          type: number
+          example: 1023
+        color:
+          description: 'Main brand color of the network in hex format (no leading #)'
+          type: string
+          example: C23D42
+        textColor:
+          description: 'Contrasting color for use over the brand color in hex format (no leading #)'
+          type: string
+          example: FFFFFF
+        latitude:
+          type: number
+          description: Latitude of the station
+          example: 39.977479
+          format: double
+        longitude:
+          type: number
+          description: Longitude of the station
+          example: -83.0035065
+          format: double
+        type:
+          enum:
+          - station
+    VehicleType:
+      enum:
+      - electric-scooter
+      - scooter
+      - bike
+      - electric-bike
+      type: string
+  securitySchemes:
+    apiKey:
+      name: apiKey
+      type: apiKey
+      in: header
