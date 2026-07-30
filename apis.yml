@@ -17,9 +17,21 @@ description: >-
   5 requests per minute and 1,500 calls per month after key approval, with
   custom commercial plans available through partners@transit.app.
 type: Index
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Provider
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/transit-app.png
 tags:
   - Transit
   - Public Transit
@@ -42,42 +54,54 @@ created: '2026-05-25'
 modified: '2026-05-25'
 specificationVersion: '0.20'
 apis:
-  - aid: transit-app:transit-api
-    name: Transit API
-    description: >-
-      Public, real-time and trip-planning API for Transit's transit and
-      shared-mobility data. Exposes nearby routes and stops, stop departures
-      (schedule + real-time), multimodal trip planning, plan duration
-      estimates, placemarks for bikeshare/scooter/carshare vehicles and docks,
-      available sharing networks, route and trip details, service alerts, and
-      real-time vehicle positions across 1,000+ cities. Single OpenAPI 3.1
-      contract under /v4/public, with map-layer endpoints for shared-mobility
-      placemarks and networks. Auth via the apiKey header; free tier is 5
-      req/min and 1,500 req/month after approval.
-    humanURL: https://api-doc.transitapp.com/v4.html
-    baseURL: https://external.transitapp.com
-    tags:
-      - Transit
-      - Public Transit
-      - Multimodal
-      - Trip Planning
-      - Real-Time
-      - Departures
-      - Stops
-      - Routes
-      - Service Alerts
-      - Shared Mobility
-      - Vehicle Positions
-      - GTFS
-    properties:
-      - type: Documentation
-        url: https://api-doc.transitapp.com/v4.html
-      - type: Documentation
-        url: https://api-doc.transitapp.com/
-      - type: Signup
-        url: https://transitapp.com/apis
-      - type: OpenAPI
-        url: openapi/transit-openapi.yml
+- aid: transit-app:transit-app-map-layers-api
+  name: Transit Map Layers API
+  description: The Map Layers API from Transit — 2 operation(s) for map layers.
+  humanURL: https://api-doc.transitapp.com/v4.html
+  baseURL: https://external.transitapp.com
+  tags:
+  - Map Layers
+  properties:
+  - type: OpenAPI
+    url: openapi/transit-app-map-layers-api-openapi.yml
+  - type: Documentation
+    url: https://api-doc.transitapp.com/v4.html
+  - type: Documentation
+    url: https://api-doc.transitapp.com/
+  - type: Signup
+    url: https://transitapp.com/apis
+- aid: transit-app:transit-app-public-api
+  name: Transit Public API
+  description: The Public API from Transit — 13 operation(s) for public.
+  humanURL: https://api-doc.transitapp.com/v4.html
+  baseURL: https://external.transitapp.com
+  tags:
+  - Public
+  properties:
+  - type: OpenAPI
+    url: openapi/transit-app-public-api-openapi.yml
+  - type: Documentation
+    url: https://api-doc.transitapp.com/v4.html
+  - type: Documentation
+    url: https://api-doc.transitapp.com/
+  - type: Signup
+    url: https://transitapp.com/apis
+- aid: transit-app:transit-app-vehicles-api
+  name: Transit Vehicles API
+  description: The Vehicles API from Transit — 1 operation(s) for vehicles.
+  humanURL: https://api-doc.transitapp.com/v4.html
+  baseURL: https://external.transitapp.com
+  tags:
+  - Vehicles
+  properties:
+  - type: OpenAPI
+    url: openapi/transit-app-vehicles-api-openapi.yml
+  - type: Documentation
+    url: https://api-doc.transitapp.com/v4.html
+  - type: Documentation
+    url: https://api-doc.transitapp.com/
+  - type: Signup
+    url: https://transitapp.com/apis
 common:
   - type: AgenticAccess
     url: agentic-access/transit-app-agentic-access.yml
