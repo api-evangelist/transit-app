@@ -1,0 +1,18 @@
+{
+  "provider": "transit-app",
+  "sources": [
+    "transit-app-map-layers-api-openapi.yml",
+    "transit-app-public-api-openapi.yml",
+    "transit-app-vehicles-api-openapi.yml"
+  ],
+  "outputs": [
+    "transit-app-map-layers-api-openapi.yml",
+    "transit-app-public-api-openapi.yml",
+    "transit-app-vehicles-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
